@@ -1,0 +1,182 @@
+# -----------------------------------------------------
+# Converted by cvpubdef from pubdef
+# -----------------------------------------------------
+#
+#
+# converted by cvpubdef from HOLDINGS_POS: atpeR
+#
+#
+# converted from HOLDINGS_POS field tag: 'a'
+#
+#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
+b|a|100..|-e4|Author||b|
+b|a|110..|-e4|Corp Author||b|
+#
+b|a|111|&|Conference||b|
+b|a||&|Author||b|
+#
+# converted from HOLDINGS_POS field tag: 't'
+#
+b|t||&|Title||b|
+#
+# converted from HOLDINGS_POS field tag: 'p'
+#
+b|p||&|Imprint||b|
+#
+# converted from HOLDINGS_POS field tag: 'e'
+#
+b|e||&|Edition||b|
+#
+# end HOLDINGS_POS
+#
+#
+# next line added by cvpubdef
+b|H|||||
+b|T|||||
+#
+b|r|306|&|Time||b|
+b|r|307|&|Hours||b|
+b|r|310|&|Frequency||b|
+b|r|315|-6789|Frequency||b|
+b|r|321|&|Frequency||b|
+b|r|336|&|||b|
+b|r|337|&|||b|
+b|r|338|&|||b|
+b|r|362|&|Pub Date||b|
+b|r||&|Descript||b|
+#
+#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
+b|s|800..|-e4|Series||b|
+b|s|810..|-e4|Series||b|
+b|s|896..|-e4|Series||b|
+b|s|897..|-e4|Series||b|
+#
+b|s||-6789|Series||b|
+#
+b|n|501|&|With:||b|
+b|n|502|&|Thesis||b|
+b|n|504|&|Bibliog.||b|
+b|n|505|&|Contents||b|
+b|n|506|&|Access||b|
+b|n|508|&|Credits||b|
+b|n|510|&|Indexed In:||b|
+b|n|511[^1]|&|Performer||b|
+b|n|5111|&|Cast||b|
+b|n|516|&|File Type||b|
+b|n|520|&|Summary||b|
+b|n|521|&|Audience||b|
+b|n|524|&|Cite As:||b|
+b|n|533|&|Reproduction||b|
+b|n|538|&|System Det||b|
+b|n|550|&|Issued By||b|
+b|n|555[^0]|&|Indexes||b|
+b|n|5550|&|Finding Aids||b|
+b|n|561|&|Provenance||b|
+b|n|586|&|Awards||b|
+b|n|59[0-9]|-8|Local Note||b|
+b|n||-8|Note||b|
+#
+#this seems wrong - y should be tag 999 (misc.) and h represents 856 - AEB 01-30-13
+b|y|856|u|Econnect||b|
+b|y|[^8][^5][^6]|u|||b|
+b|y||u|Marc||b|
+#
+#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
+b|d|600..|-e4|Subject||b|
+b|d|610..|-e4|Subject||b|
+b|d|630..|-e4|Subject||b|
+b|d|650..|-e4|Subject||b|
+b|d|651..|-e4|Subject||b|
+b|d|654..|-e4|Subject||b|
+#
+#suppressing subfield 2 (Source of term)
+b|d|655|-2|Genre||b|
+#
+#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
+b|d|662..|-e4|Subject||b|
+#
+#suppressing subfiled 9 from tag 690 (Special Entry) & e (Relator Term) and 4 (Relator Code) from 69x - AEB 01-29-13
+b|d|69[0-9]..|-e49|Local Subj||b|
+#
+b|d||-29|Subject||b|
+b|d|650.2||||b|
+b|d|650.3||||b|
+b|d|650.5||||b|
+b|d|650.6||||b|
+b|d|650.7||||b|
+b|d|650.8||||b|
+b|d|653|&|||b|
+#
+#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
+b|b|700..|-e4|Alt Author||b|
+b|b|710..|-e4|Alt Author||b|
+b|b|720..|-e4|Alt Author||b|
+b|b|751..|-e4|Alt Author||b|
+b|b|790..|-e4|Alt Author||b|
+b|b|791..|-e4|Alt Author||b|
+b|b|796..|-e4|Alt Author||b|
+b|b|797..|-e4|Alt Author||b|
+#
+b|b||-7|Alt Author||b|
+#
+b|u|130|&|Unif Title||b|
+b|u|210|&|Key Title||b|
+b|u|222|&|Key Title||b|
+b|u|730|&|Alt Title||b|
+b|u|740|&|Alt Title||b|
+b|u||&|Add Title||b|
+#
+#suppressing subfield 8 (Source of Class.)
+b|h||-8|Lib. Has||b|
+#suppressing subfield 7 (Control Subfield)
+b|x|780.0|-7|Continues||b|
+b|x|780.1|-7|Cont.In Part||b|
+b|x|780.2|-7|Supersedes||b|
+b|x|780.3|-7|Sup.In Part||b|
+b|x|780.4|-7|Formed By||b|
+b|x|780.5|-7|Absorbed||b|
+b|x|780.6|-7|Absrdb.In Pt.||b|
+b|x|780.7|-7|Sep. From||b|
+b|x||-7|Continues||b|
+b|w|787|-7|Related To||b|
+b|z|785.0|-7|Cont. By||b|
+b|z|785.1|-7|Cont.In Part ||b|
+b|z|785.2|-7|Supersd By||b|
+b|z|785.3|-7|Sup.In Pt.By||b|
+b|z|785.4|-7|Absorbd By||b|
+b|z|785.5|-7|Abs.In Pt.By||b|
+b|z|785.5|-7|Absorbd||b|
+b|z|785.6|-7|Split Into||b|
+b|z|785.7|-7|Merged With ||b|
+b|z|785.8|-7|Changed To ||b|
+b|z||-7|Cont'd By||b|
+#
+b|i|020|&|ISBN||b|
+b|i|022|&|ISSN||b|
+b|i|024|&|Standard No.||b|
+b|i|028|&|Music #||b|
+b|i||&|ISBN/ISSN||b|
+b|o|001|&|OCLC #||b|
+c|i||a|Identity||b|
+c|c||+||b|
+c|Q||||b|
+c|$||+|Location||b|
+c|h||-8x|Lib. Has||b|
+c|2||+|Latest Received||b|&nbsp;
+c|3||+|Latest Received||b|
+c|Q||||b|
+#
+# end pubdef
+#
+#
+# -----------------------------------------------------
+# Converted by cvpubdef from item_col_width: 1(23),Cv#(27),%
+# -----------------------------------------------------
+i|1||||29|b|
+i|C||||0|b|&nbsp;
+i|v||||0|b|&nbsp;
+# i|#||||34|b|
+i|Q||||b|
+i|%||||0|b|
+#
+#end converted webpub.def

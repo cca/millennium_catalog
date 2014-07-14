@@ -1,0 +1,83 @@
+/*<!-- 2006 Web OPAC Version, set from 21 November, 2006 -->*/
+/*<!-- This file last changed: 25, Feb 2007 -->*/
+/* general appearance */
+/* See also Web Option BODYPARAM */
+
+/* Stylesheet to use for dynamic Web pages */
+/* is set by Web Option STYLESHEET */
+
+/* Section 1 */
+/*Global tag styles*/
+body { margin: 0; 
+padding: 0; 
+background-color: white; 
+font-family : Verdana, Arial, Helvetica, sans-serif;  
+font-style : normal; 
+font-weight : normal; 
+font-size: 12px;}
+
+strong { font-weight: bold; }
+div, table { clear: both; }
+input[type=submit] { border: 1px solid #072e99; background-color: #cccccc; color: #072e99; cell-padding: 1px;}
+
+/* This rule causes search form elements to resize along with the rest of the text on the page if the user resizes text. */
+input, select, textarea { font-size: 95%;}
+
+/* This rule uses CSS2 to give a nicer effect in compliant browsers, while avoiding an annoying display effect in Internet Explorer 6 */
+input[type="checkbox"] { background-color: #B7C9F9; }
+
+
+/*general TABLE and TABLE CELL styles*/
+
+table {margin-left: auto; margin-right: auto;}
+td { font-family : Verdana, Arial, Helvetica, sans-serif;  
+font-style : normal; 
+font-weight : normal; 
+font-size: 12px;}
+th { font-family : Verdana, Arial, Helvetica, sans-serif; 
+font-size: 12px; }
+
+/*LINK styles */
+a:link { color: #990033; }
+a:active{ color: #0000ff; }
+a:visited { color: #990033;  } 
+a:hover  { color: #666666;  } 
+a img {border: none; background: white; text-decoration: none; }
+a img:hover {background: white; text-decoration: none;}
+
+/* classes for BROWSE DISPLAYS */
+/* See also Web options BROWSE_HEADERS, TABLEPARAM_BROWSE..., TABLEPARAM_BRIEFCIT */
+
+table.browseScreen {width:95%; border: 0px }
+table.browseList, table.patFunc  {width:95%; border:1px; border-color: #cccccc; border-style: solid; spacing: 0px; padding: 0px; }
+
+.browseHeader, .browseEntry, .browseSubEntry, .reserveBibs {border: 0px;}
+
+.browseHeaderNum, .browseHeaderMark, .browseHeaderData, .browseHeaderYear, .browseHeaderEntries, .ftlistHeader th, .browseHeaderRelevance, .browseHeaderMedia, .reserveBibs td, .patFuncEntry, .patFuncMark, .patFuncBarcode, .patFuncStatus, .patFuncCallNo, .patFuncHeaders, .patFuncTitle
+{border-bottom:1px solid #cccccc; border-top: 0px; border-right: 0px; border-left: 0px;}
+
+.browseEntryNum, .browseEntryMark, .browseEntryData, .browseEntryYear, .browseSubEntryData, .browseEntryEntries, .browseSubEntryYear, .browseSuperEntry td, .browseSuperEntryYear td, .yourEntryWouldBeHere td, .browseEntryRelevance, .browseEntryMedia, .browseSubEntryMedia
+{border-bottom:1px solid #cccccc; border-top: 0px; border-right: 0px; border-left: 0px;}
+
+.browseSaveJump {border: 0px; line-height: 19px;}
+.browseSaveJump input { border: 1px solid #072e99; background-color: #cccccc; color: #072e99; cell-padding: 1px;}
+.browseSaveJump input[type=text]{border: 1px solid #111111; color: #111111; background-color: white;}
+
+
+
+/*classes for BIB DISPLAYS */
+
+table.bibScreen {width: 95%; border: 0px;}
+table.bibInfo {width:95%; border:1px; border-color: #cccccc; border-style: solid; spacing: 0px; padding: 0px; }
+table.bibItems, .bibLinks, .bibOrder {width: 75%; border:1px solid #777777;}
+table.bibHoldings {width: 75%;}
+
+.bibItemsHeader {border-bottom:1px solid #cccccc; border-top: 0px; border-right: 0px; border-left: 0px;}
+.bibItemsEntry td, .bibLinks th, .bibLinks td {border: 0px; text-align: center;}
+.bibInfoLabel {width:100px;}
+.bibOrderEntry td {border: 0px; text-align: center; color: #990000;}
+
+
+
+
+
