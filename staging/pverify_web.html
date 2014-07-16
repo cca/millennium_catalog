@@ -33,10 +33,22 @@
             &nbsp;
         </div>
         <div id="grayborder">
+<!-- these templates need to be flush with the beginning of the line
+or Millennium interprets them as literal comments :/ -->
+<!--{iferrmsg}-->
+<div class="errormessage">
+<!--{iferrmsgisPIN}-->
+<!--{newpinmsg}-->
+<!--{else}-->
+<!--{errmsg}-->
+<!--{xif}-->
+</div>
+
+<!--{xif}-->
 
             <h2>Patron login</h2>
             <div id="searchcontainer">
-                <form name="patform" method="POST">
+                <form action="" name="patform" method="POST">
                     <label id="onetwofive" for="name">Name:</label>
                     <input name="name" id="name" value="" type="text">
                     <p class="caption">For example, type "Laetetia Meyer" or "Meyer" <span style="color:#990000;">[NOT your webmail name]</span></p>
