@@ -2,9 +2,9 @@
 <html>
 <HEAD>
 <TITLE>CCA Libraries Catalog Theses Search</TITLE>
-<META http-equiv="Refresh" content="300;URL=http://vm-lib-www-dev-01/">
+<META http-equiv="Refresh" content="300;URL=//libraries.cca.edu/">
 <link rel="stylesheet" type="text/css" media="all" href="screens/styles.css" />
-<link rel="Shortcut Icon" href="http://vm-lib-www-dev-01/favicon.ico">
+<link rel="Shortcut Icon" href="//libraries.cca.edu/favicon.ico">
 
 <!-- CCA Libraries wishes to thank Williams College for the javascript in use for this page -->
 
@@ -25,12 +25,12 @@ function processLimit()
 var limitWorkString = "";
 for (var i = 0; i < limitName.length; i++)
 {
-<!-- 
+<!--
 //  The following statement processes date form elements.
 //  Date limits must be processed differently since they contain text form elements.
 // -->
 if (limitName[i] == "Da" || limitName[i] == "Db") {limitWorkString += "&" + limitName[i] + "=" + limitValue[i]; continue;}
-<!-- The following statement processes all selection list form elements. --> 
+<!-- The following statement processes all selection list form elements. -->
 if (limitValue[i] != 0) {limitWorkString += "&" + limitName[i] + "=" + limitValue[i];}
 }
 return limitWorkString;
@@ -84,13 +84,13 @@ function submitSearch(searchForm)
 {
 var isSearch = 0;
 var isLimit = 0;
-  
+
 var searchString = "";
 var limitString = "";
-  
+
 var searchArrayCounter = 0;
-var limitArrayCounter = 0; 
-   
+var limitArrayCounter = 0;
+
 for (var i = 0; i < searchForm.elements.length; i++)
 {
 if (searchForm[i].name.indexOf("startSearch") != -1) {isSearch = 1; isLimit = 0; continue;}
@@ -111,7 +111,7 @@ else if (isLimit == 1)
 limitName[limitArrayCounter] = searchForm[i].name;
 if (searchForm[i].type == "select-one") {limitType[limitArrayCounter] = "select-one"; limitValue[limitArrayCounter] = searchForm[i].options[searchForm[i].selectedIndex].value; limitArrayCounter++; continue;}
 else if (searchForm[i].type == "text") {limitType[limitArrayCounter] = "text"; limitValue[limitArrayCounter] = searchForm[i].value; limitArrayCounter++; continue;}
-else {limitType[limitArrayCounter] = ""; limitValue[limitArrayCounter] = ""; limitArrayCounter++; continue;}		 
+else {limitType[limitArrayCounter] = ""; limitValue[limitArrayCounter] = ""; limitArrayCounter++; continue;}
 }
 else
 {
@@ -119,10 +119,10 @@ continue;
 }
 }
 }
-searchString = processSearch();   
+searchString = processSearch();
 limitString = processLimit();
-<!-- David Fuller at Union College suggests commenting out the next line in order for this to work with Netscape 4.x and MacOS -->	
-// searchString =encodeURI(searchString) 
+<!-- David Fuller at Union College suggests commenting out the next line in order for this to work with Netscape 4.x and MacOS -->
+// searchString =encodeURI(searchString)
 window.location.href = "http://" + location.host + "/search/X?" + searchString + limitString;
 return false;
 }
@@ -201,7 +201,7 @@ for (i = i; i < str.length; i++)
 {
 if (str.charAt(i+1) == ":"  || str.charAt(i+1) == "(") {break;}
 else {temp += str.charAt(i); continue;}
-}		 
+}
 if (temp.length > 0)
 {
 for (var m = 0; m < document.search.length; m++)
@@ -235,7 +235,7 @@ else
 {
 continue;
 }
-}	   
+}
 }
 }
 
@@ -258,7 +258,7 @@ function GoBack() {
     <div id="navbar">
             &nbsp;&nbsp;<a href="/search/X">Advanced Search</a>
             &nbsp;|&nbsp;<a href="/search/q">Author/Title</a>
-            &nbsp;|&nbsp;<a href="/search/">Basic Search</a> 
+            &nbsp;|&nbsp;<a href="/search/">Basic Search</a>
             &nbsp;|&nbsp;<a href="/screens/coursereserves_search.html">Course Reserves</a>
             &nbsp;|&nbsp;<a href="/ftlist">New Books &amp; Videos</a>
             &nbsp;|&nbsp;Theses
@@ -268,7 +268,7 @@ function GoBack() {
     <div id="grayborder">
 			   <div id="browse">
                <h2>Browse CCA/C Master's Theses by Program</h2>
-          
+
 						<div id="searchcontainer"><p>
 					<form TARGET="_parent"  action="http://library.cca.edu:2082/search/a?"  METHOD="POST">
 							<input type="hidden" name="searchtype" value="t">
@@ -325,29 +325,29 @@ function GoBack() {
 					&nbsp;<input type="SUBMIT" class="button" name=SUBMIT2 value="Find">
 <input type="hidden" name="SORT" value="A"></div>
 
-				</form> </p> 
+				</form> </p>
 				</div>
                 <div clear="both"></div>
 	<h2>Search CCA/C Master's Theses</h2>
         <div id="searchcontainer">
 						<form id=search name=search  onsubmit="return submitSearch(this);" action=javascript:submitSearch(this); encType="multipart/form-data: charset=utf-8">
 						<INPUT type=hidden name=startSearch>
-						<!--<input type=hidden name=fieldLimit1 value="t:Master of"> 
+						<!--<input type=hidden name=fieldLimit1 value="t:Master of">
                         <input type=hidden name=boolean1 value="+and+" />-->
-							<div id="onetwofive">Student:</div>	
+							<div id="onetwofive">Student:</div>
 						<input type="hidden" name=fieldLimit2 value="a:" />
 							<!--<SELECT name=fieldLimit2 class="menu">
 									<OPTION value=a:>&nbsp;Student:</OPTION>
 							</SELECT> --><INPUT type="text" name=searchText2 class="menu">
 								<input type=hidden name=boolean2 value="+and+" />
-                                <!-- 
-							<SELECT name=boolean2 class="menu"> 
-								<OPTION value=+or+>OR</OPTION>  
+                                <!--
+							<SELECT name=boolean2 class="menu">
+								<OPTION value=+or+>OR</OPTION>
 								<OPTION value=+and+ selected>AND</OPTION>
 
 								<OPTION value=+and+not+>NOT</OPTION>
-							</SELECT> -->                    
-					<p class="caption">Enter the Student's last name first, or leave blank.</p>           
+							</SELECT> -->
+					<p class="caption">Enter the Student's last name first, or leave blank.</p>
 						<p><input type="hidden" name=fieldLimit3 value="" /><!--<SELECT name=fieldLimit3 class="menu">
 								<OPTION value="" selected>Program:</OPTION>
 							</SELECT> --><div id="onetwofive">Program:</div>
@@ -396,50 +396,50 @@ function GoBack() {
                       </select></div></p>
 								<!--<INPUT maxLength=75 size=35 name=searchText3 class="menu">-->
 						<input type="hidden" name=endsearch>
-										  
+
 				<INPUT TYPE="hidden" NAME=startLimit>
-		
+
 
 						<div id="onetwofive">Limit by:</div>
                         <div id="year"><div id="yearafter">Year After:</div><input type=text name=Da value=></div>
                         <div id="year"><div id="yearafter">Year Before:</div><input type=text name=Db value=></div>
-						
+
 						<!--<p><div id="onetwofive">Sort by </div>
 						<select name="SORT" class="menu">
 						<option VALUE=D>Date</option>
 						<option VALUE=A>Alphabetical</option>
-						
+
 						</select></p>-->
-						
+
 						<div id="hidden"><p>Library Collection <select name=b class="menu">
 						<option value="cca"> CCA Libraries ARCHIVES</option>
 						</select></p>
-						
-						
+
+
 						<p>Material Type <select name=m class="menu">
 						<option value="t">THESIS</option>
 						</select></p></div>
 						<div clear="both"></div>
-						
 
-						<INPUT type=hidden name=endLimit> 
+
+						<INPUT type=hidden name=endLimit>
 						<div id="submit"><INPUT TYPE=SUBMIT class="button" VALUE="Find"></div>
 					</form>
 
 			 </div>
-        
-     <div id="browse"><p class="note"><em>Theses from the last five years are housed at Simpson Library in San Francisco; 
-		all previous years are in the Meyer Library archives in Oakland.  
-			Theses are library-use-only and are not eligible for intralibrary loan.</em></p></div> 
+
+     <div id="browse"><p class="note"><em>Theses from the last five years are housed at Simpson Library in San Francisco;
+		all previous years are in the Meyer Library archives in Oakland.
+			Theses are library-use-only and are not eligible for intralibrary loan.</em></p></div>
      </div>
-       
+
          <div id="searchhelp">
-            <a href="http://vm-lib-www-dev-01/contact">Ask a librarian</a> | <a href="http://vm-lib-www-dev-01/learn/search-help/catalog" class="standard">Search help</a>
+            <a href="//libraries.cca.edu/contact">Ask a librarian</a> | <a href="//libraries.cca.edu/learn/search-help/catalog" class="standard">Search help</a>
         </div>
  </div>
   <div id="footer">
             Meyer Library: 5212 Broadway, Oakland, CA 94618 (510.594.3658) Simpson Library: 1111 8th St, San Francisco, CA 94107 (415.703.9574)
-         </div>     
+         </div>
 </div>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
