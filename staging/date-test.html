@@ -1,28 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
 <script type="text/javascript">
 var date=function(){
 try {
-var dd = document.getElementsByTagName("span"); //find all dd 
+var dd = document.getElementsByTagName("span"); //find all dd
 for (var i=0; i < dd.length; i++) //loop through all dd
 {
-	if (dd[i].className=="subject") { 
+	if (dd[i].className=="subject") {
 	 var dates = dd[i].innerHTML;
 			if (dates != ""){
-				dates = dates.toDateString();		
+				dates = dates.toDateString();
 				dd[i].innerHTML = "dates";
 			}
-			
+
 	}
-			
+
 }
 }
-catch(e) 
+catch(e)
 {
-} 
+}
 }
 date();
 </script>
@@ -35,6 +34,6 @@ date();
 <dd class="subject">1923-06-21</dd>
 
 </dl>
-	
+
 </body>
 </html>
