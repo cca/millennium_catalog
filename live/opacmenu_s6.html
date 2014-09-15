@@ -6,8 +6,8 @@
 <link rel="Shortcut Icon" href="http://libraries.cca.edu/favicon.ico">
 <link title="CCA Library Catalog" rel="search" type="application/opensearchdescription+xml" href="/screens/ccalib.xml" />
 <style>
-body span {visibility:hidden !important;}
-body div#mycontent span {visibility:visible !important;}
+/* hide "WebPAC Pro" footer text that III inserts */
+body>span {visibility:hidden !important;}
 </style>
 </head>
 
@@ -27,62 +27,39 @@ body div#mycontent span {visibility:visible !important;}
 
     <p> Search the CCA New Materials Library.</p>
 
-			<p><form action="/search/a?">
-            <select name="searchtype" class="menu">
-			<option value="Y" selected>Keyword</option>
-			<option value="a">Company</option>
-            <option value="d">Material Terms</option>
-            <option value="Y">Material Details</option>
-            <option value="t">Material Name</option>
-            <option value="l">Sample Number</option>
-			</select>
+            <form action="/search/a?">
+                <select name="searchtype" class="menu">
+    			<option value="Y" selected>Keyword</option>
+    			<option value="a">Company</option>
+                <option value="d">Material Terms</option>
+                <option value="Y">Material Details</option>
+                <option value="t">Material Name</option>
+                <option value="l">Sample Number</option>
+    			</select>
 
-			<input name="searcharg" type="text" class="searchbox" size="45">
-				<input name="Submit" type="submit" class="button" id="Submit2" value="Find">
-				<input type="hidden" name="SORT" value="A"></p>
-                <p class="caption">
-    Select search type, enter search terms, then use the 'enter' key or click the 'find' button.</p>
+    			<input name="searcharg" type="text" class="searchbox" size="45">
+    			<input name="Submit" type="submit" class="button" id="Submit2" value="Find">
+    			<input type="hidden" name="SORT" value="A">
 			</form>
 		</div>
         <div id="browse">
 
 			<h2>Search tips</h2>
-           <div id="column">
-           <ul><strong>Keyword:</strong> retrieves words in the material name, manufacturer, material terms and details fields, in any order.
-			You may use the Boolean operators AND, OR and NOT. You may also truncate words with an asterisk.
-			<li>Nylon <strong>and</strong> fabric</li>
-                    <li>Porcelain <strong>or</strong> ceramic</li>
-                    <li>Wood <strong>and not</strong> pine</li>
-                    <li>(porcelain <strong>or</strong> ceramic) and (water<strong>* or</strong> weather<strong>*</strong>)</li>
-              </ul>
+            <div id="column">
+                <p><strong>Keyword</strong> searches the material name, manufacturer, material terms, and details fields.</p>
+                <p>An asterisk can be used as a "wildcard" that stands in for any letter: "<kbd>fiber*</kbd>" finds materials with the words "fiber", "fibers", and "fiberglass".</p>
+            </div>
 
-             <ul><strong>Company:</strong> type the manufacturer's name.
-                    <li>Ecotile</li>
-                    <li>Ruckstuhl Carpet</li>
-                    </ul>
-                <ul><strong>Material Name:</strong> type as much or as little of the name as you want.
-                    <li>Kev</li>
-                    <li>Kevlar</li>
-                    <li>Acrylite Acrylic</li>
-                    </ul>
-              </div>
-              <div id="column">
-
-             <ul><strong>Material Terms:</strong> type in an exact CCA materials term.
-			 <li>glass</li>
-        	 <li>flooring</li>
-             <li>upholstery</li>
-             <li>polyethylene</li>
-             <li>plywood</li>
-             <li>fabric</li>
-             <li>low VOC</li>
-             </ul>
-
-             <ul><strong>Sample ID #:</strong> type the New Materials Library ID #, starting with the first numbers. You may type the first part of the number only, if you wish to browse by ID. Replace decimal points with a space.
-           	<li>01a 004</li>
-             <li>01a</li></ul>
-             <p><strong>Please Note:</strong> ID #  designates the location of the material sample, and gives a sequential sample number.  The materials library displays most samples on 24 vertical panels.  Each panel is numbered, and its sides are designated "a" and "b".  Each sample ID# begins with the panel location (e.g. 18a), then a decimal point, followed by a sequential sample number.  Therefore the first sample on side a of panel 18 is numbered 18a.001. </p>
-
+            <div id="column">
+                 <ul><strong>Material Terms:</strong> use an exact CCA materials term:
+    			     <li>Ceramic</li>
+                     <li>Composites</li>
+                     <li>Fibers</li>
+                     <li>Glass</li>
+                     <li>Metal</li>
+                     <li>Natural</li>
+                     <li>Polymers</li>
+                 </ul>
 			</div>
 		</div>
 
