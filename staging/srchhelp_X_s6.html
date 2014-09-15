@@ -1,17 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>CCA Libraries Catalog Advanced Search</title>
 <meta http-equiv="Refresh" content="300;URL=http://libraries.cca.edu">
 <link rel="stylesheet" type="text/css" media="all" href="screens/styles.css" />
 <link rel="Shortcut Icon" href="http://libraries.cca.edu/favicon.ico">
-<style type="text/css"> 
+<style type="text/css">
 <!--
 body span {visibility:hidden !important;}
 body div#mycontent span {visibility:visible !important;}
 -->
-</style> 
-<script type="text/javascript">window.name = "main";</script>   
+</style>
+<script type="text/javascript">window.name = "main";</script>
 <script type="text/javascript">
 // Popup window code
 function newPopup(url) {
@@ -20,7 +20,7 @@ function newPopup(url) {
 		popupWindow.focus();
 }
 
-</script>  
+</script>
 <script type="text/javascript" language="JavaScript1.3">
 <!--
 //  IMPORTANT NOTE: The following Javascript functions are provided for example purposes only.
@@ -46,13 +46,13 @@ function processLimit()
 <!--
 // This function is called by the submitSearch function.
 // This function processes all limit form elements in the current page.
-// Any form element used to apply a limit to the search entered by the user is 
+// Any form element used to apply a limit to the search entered by the user is
 // considered a limit form element for the purpose of this function.
-// Innovative recommends always using tokens to insert limit form elements into HTML. 
+// Innovative recommends always using tokens to insert limit form elements into HTML.
 // For more information on tokens see the User Manual or http://csdirect.iii.com .
 // All limit form elements must appear contiguously within the HTML and must be enclosed
 // in the following hidden form tags.
-// The user must include the following hidden form element before the first 
+// The user must include the following hidden form element before the first
 // limit form element appearing in the search form:
 // <input TYPE="hidden" NAME="startLimit">
 // The following hidden form element must be included after the last limit form
@@ -63,12 +63,12 @@ function processLimit()
 var limitWorkString = "";
 for (var i = 0; i < limitName.length; i++)
 {
-<!-- 
+<!--
 //  The following statement processes date form elements.
 //  Date limits must be processed differently since they contain text form elements.
 // -->
 if (limitName[i] == "Da" || limitName[i] == "Db") {limitWorkString += "&" + limitName[i] + "=" + limitValue[i]; continue;}
-<!-- The following statement processes all selection list form elements. --> 
+<!-- The following statement processes all selection list form elements. -->
 if (limitValue[i] != 0) {limitWorkString += "&" + limitName[i] + "=" + limitValue[i];}
 }
 return limitWorkString;
@@ -135,9 +135,9 @@ function submitSearch(searchForm)
 <!-- version 1 : January 22, 2003 -->
 <!--
 // This function is called when the user clicks the submit button.
-// This function processes all form elements in the form named search and 
+// This function processes all form elements in the form named search and
 // populates the arrays searchType, searchName, searchValue, limitType, limitName, limitValue
-// with data. It then passes the data to the functions processSearch and processLimit; please 
+// with data. It then passes the data to the functions processSearch and processLimit; please
 // see the description of those functions for important information on the hidden form elements
 // within the form named search which are required for this function to work properly.
 // Finally, this function replaces the current page with a URL constructed based on the user's
@@ -146,13 +146,13 @@ function submitSearch(searchForm)
 {
 var isSearch = 0;
 var isLimit = 0;
-  
+
 var searchString = "";
 var limitString = "";
-  
+
 var searchArrayCounter = 0;
-var limitArrayCounter = 0; 
-   
+var limitArrayCounter = 0;
+
 for (var i = 0; i < searchForm.elements.length; i++)
 {
 if (searchForm[i].name.indexOf("startSearch") != -1) {isSearch = 1; isLimit = 0; continue;}
@@ -173,7 +173,7 @@ else if (isLimit == 1)
 limitName[limitArrayCounter] = searchForm[i].name;
 if (searchForm[i].type == "select-one") {limitType[limitArrayCounter] = "select-one"; limitValue[limitArrayCounter] = searchForm[i].options[searchForm[i].selectedIndex].value; limitArrayCounter++; continue;}
 else if (searchForm[i].type == "text") {limitType[limitArrayCounter] = "text"; limitValue[limitArrayCounter] = searchForm[i].value; limitArrayCounter++; continue;}
-else {limitType[limitArrayCounter] = ""; limitValue[limitArrayCounter] = ""; limitArrayCounter++; continue;}		 
+else {limitType[limitArrayCounter] = ""; limitValue[limitArrayCounter] = ""; limitArrayCounter++; continue;}
 }
 else
 {
@@ -181,10 +181,10 @@ continue;
 }
 }
 }
-searchString = processSearch();   
+searchString = processSearch();
 limitString = processLimit();
-	
-searchString =encodeURI(searchString) 
+
+searchString =encodeURI(searchString)
 window.location.href = "http://" + location.host + "/search/X?" + searchString + limitString;
 return false;
 }
@@ -192,7 +192,7 @@ return false;
 function modifySearch()
 <!-- version 2 : May 25, 2004 -->
 <!--
-// This function takes the URL of the current page and extracts all search data into the 
+// This function takes the URL of the current page and extracts all search data into the
 // array modifyString3. It then passes that information to the function parseSearch.
 // -->
 {
@@ -213,7 +213,7 @@ parseSearch(modifyString3[1]);
 function modifySearch()
 <!-- version 2 : May 25, 2004 -->
 <!--
-// This function takes the URL of the current page and extracts all search data into the 
+// This function takes the URL of the current page and extracts all search data into the
 // array modifyString3. It then passes that information to the function parseSearch.
 // -->
 {
@@ -234,7 +234,7 @@ parseSearch(modifyString3[1]);
 function modifySearch()
 <!-- version 2 : May 25, 2004 -->
 <!--
-// This function takes the URL of the current page and extracts all search data into the 
+// This function takes the URL of the current page and extracts all search data into the
 // array modifyString3. It then passes that information to the function parseSearch.
 // -->
 {
@@ -255,7 +255,7 @@ parseSearch(modifyString3[1]);
 function modifySearch()
 <!-- version 2 : May 25, 2004 -->
 <!--
-// This function takes the URL of the current page and extracts all search data into the 
+// This function takes the URL of the current page and extracts all search data into the
 // array modifyString3. It then passes that information to the function parseSearch.
 // -->
 {
@@ -280,7 +280,7 @@ function parseSearch(str)
 <!--
 // This function is called by the function modifySearch.
 // This function takes the relevant portion of the URL of the current page and attempts to place
-// all data within that URL back into the appropriate form elements on the page within the 
+// all data within that URL back into the appropriate form elements on the page within the
 // form named search. If the function can't find appropriately named form elements into which
 // to place data, it puts everything into the text element named searchText1 in the form named search.
 // -->
@@ -347,7 +347,7 @@ for (i = i; i < str.length; i++)
 {
 if (str.charAt(i+1) == ":"  || str.charAt(i+1) == "(") {break;}
 else {temp += str.charAt(i); continue;}
-}		 
+}
 if (temp.length > 0)
 {
 for (var m = 0; m < document.search.length; m++)
@@ -381,7 +381,7 @@ else
 {
 continue;
 }
-}	   
+}
 }
 }
 
@@ -396,7 +396,7 @@ function GoBack() {
 }
 //-->
 </script>
-<script type="text/javascript">window.name = "main";</script>   
+<script type="text/javascript">window.name = "main";</script>
 <script type="text/javascript">
 // Popup window code
 function newPopup(url) {
@@ -405,7 +405,7 @@ function newPopup(url) {
 		popupWindow.focus();
 }
 
-</script>  
+</script>
 </head>
 <body onload="modifySearch();">
 <div id="page">
@@ -415,57 +415,57 @@ function newPopup(url) {
             &nbsp;|&nbsp;<a href="/search~S6">Basic Search </a>
             &nbsp;|&nbsp;<a href="http://libraries.cca.edu/new-materials-lib">About New Materials Library</a>
             &nbsp;|&nbsp;<a href="http://libraries.cca.edu">Homepage</a>&nbsp;
-    </div>        
+    </div>
     <div id="nml-header"><h3>New Materials Library</h3></div>
     <div id="grayborder">
 			<h2>Advanced Searching and Limiting</h2>
 			<div id="searchcontainer">
-                
+
                 <form id=search name=search onsubmit="return submitSearch(this);" action=javascript:submitSearch(this); encType="multipart/form-data: charset=utf-8">
                 <input type=hidden name=startSearch>
-                
+
 <em>
 <!--{msg}-->
-</em>                            
-                    <select name="fieldLimit1" > 
+</em>
+                    <select name="fieldLimit1" >
                         <option value="" selected>All keywords</option>
                         <option value=a:>Company</option>
-                        <option value=t:>Material Name</option> 
+                        <option value=t:>Material Name</option>
                         <option value=d:>Material Term</option>
                         <option value=N:>Details</option>
-                    </select> 
-                        <input type="text" name=searchText1 > 
+                    </select>
+                        <input type="text" name=searchText1 >
                     <select name=boolean1 >
-                        <option value=+or+>OR</option>  
+                        <option value=+or+>OR</option>
                         <option value=+and+ selected>AND</option>
                         <option value=+and+not+>NOT</option>
-                   </select>                
-                                 
+                   </select>
+
                     <select name=fieldLimit2 >
                         <option value="" selected>All keywords</option>
                         <option value=a:>Company</option>
-                        <option value=t:>Material Name</option> 
+                        <option value=t:>Material Name</option>
                         <option value=d:>Material Term</option>
                         <option value=N:>Details</option>
-                    </select> 
-                        <input type="text" name=searchText2 > 
-                    <select name=boolean2 > 
-                        <option value=+or+>OR</option>  
+                    </select>
+                        <input type="text" name=searchText2 >
+                    <select name=boolean2 >
+                        <option value=+or+>OR</option>
                         <option value=+and+ selected>AND</option>
                         <option value=+and+not+>NOT</option>
-                    </select>                     
-                
+                    </select>
+
                     <select name=fieldLimit3 >
                         <option value="" selected>All keywords</option>
                         <option value=a:>Company</option>
-                        <option value=t:>Material Name</option> 
+                        <option value=t:>Material Name</option>
                         <option value=d:>Material Term</option>
                         <option value=N:>Details</option>
-                    </select> 
+                    </select>
                         <input type="text" name=searchText3 >
                 <input type="hidden" name=endsearch>
                 </div></p>
-                
+
                 <div id="onetwofive">Sort by</div>
                 <div id="twohundred">
                 <select name="SORT" >
@@ -474,10 +474,10 @@ function newPopup(url) {
                 <option value=R selected="selected">Relevance</option>
                 </select>
                 </div></p>
-                
-                <input type=hidden name=endLimit> 
+
+                <input type=hidden name=endLimit>
                 <div id="submit"><input name="Submit" type="submit" class="button" value="Find"></div>
-               
+
                 </form>
 			</div>
             <div id="browse"><ul><li>Keywords are those found in the company, material name, <a href="JavaScript:newPopup('nml_terms.htm');">term</a>, and details fields.</li>
@@ -490,7 +490,7 @@ function newPopup(url) {
  </div>
   <div id="footer">
             Meyer Library: 5212 Broadway, Oakland, CA 94618 (510.594.3658) Simpson Library: 1111 8th St, San Francisco, CA 94107 (415.703.9574)
-         </div> 
+         </div>
 </div>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

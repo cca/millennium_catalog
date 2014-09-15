@@ -80,7 +80,7 @@ ICON_CANCEL=<img src="/screens/cancel.gif" alt="Cancel" />
 MY_WEBPAC=0
 INSERTTAG_HTML=<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 
 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-
-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" 
+transitional.dtd"><html xml:lang="en" 
 lang="en"> 
 EXTENDED_c=1
 # WEBADDRESS=|I|http://books.google.com/books?vid=ISBN%s||<img 

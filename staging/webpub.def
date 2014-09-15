@@ -1,3 +1,4 @@
+# see http://csdirect.iii.com/manual/rmil_webopac_webpub_def.html
 # -----------------------------------------------------
 # Converted by cvpubdef from pubdef
 # -----------------------------------------------------
@@ -39,10 +40,14 @@ b|r|307|&|Hours||b|
 b|r|310|&|Frequency||b|
 b|r|315|-6789|Frequency||b|
 b|r|321|&|Frequency||b|
-b|r|336|&|||b|
-b|r|337|&|||b|
-b|r|338|&|||b|
-b|r|362|&|Pub Date||b|
+# TESTING - RDA display fields here
+b|r|336|-2|336||b|
+b|r|337|-2|337||b|
+b|r|338|-2|338||b|
+b|r|344|-2|344||b|
+b|r|346|-2|346||b|
+b|r|347|-2|347||b|
+b|r|362|-2|Pub Date||b|
 b|r||&|Descript||b|
 #
 #suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
