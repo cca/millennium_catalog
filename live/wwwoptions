@@ -50,6 +50,9 @@ FEATURED_LIST=35,37,38,39|Featured at CCA Libraries
 FORCE_COOKIE=false
 FRAMEURL=0
 HOLDINGS_POS=atpR
+# Max results to retrieve, hard ceiling at 32k
+# but putting this even lower speeds up indexing
+IBROWSE_MAX=10000
 ICON_BOOKCART_SAVED=<img src="/screens/remove_saved.gif" alt="Remove from saved list" border="0">
 ICON_CANCEL=<img src="/screens/cancel.gif" alt="Cancel" />
 ICON_RECORDLINK=<div id="recordlink"><a id="recordnem" href="%s">Permanent link for this catalog record:&nbsp;</a>%s</div>
