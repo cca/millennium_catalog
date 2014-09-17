@@ -6,6 +6,12 @@ body {
     font-weight: 400;
     margin: 0;
     padding: 0;
+
+    // hide III's "WebPac Pro notice"
+    // should be only span that's child of <body>
+    > span {
+        display: none !important;
+    }
 }
 
 strong {
