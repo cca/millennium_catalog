@@ -1,0 +1,26 @@
+{
+  "name": "millennium_catalog",
+  "version": "1.0.0",
+  "description": "CCA's customized Millennium screens & settings",
+  "main": "null",
+  "scripts": {
+    "test": "true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cca/millennium_catalog.git"
+  },
+  "author": "phette23 <phette23@gmail.com> (http://phette.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cca/millennium_catalog/issues"
+  },
+  "homepage": "https://github.com/cca/millennium_catalog",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.6.0"
+  }
+}
