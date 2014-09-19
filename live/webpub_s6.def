@@ -1,13 +1,8 @@
-# -----------------------------------------------------
-# Converted by cvpubdef from pubdef
-# -----------------------------------------------------
+# --------------------------------------------------------
+# This file defines how MARC fields display in the catalog
+# for Scope #6 (Materials Library)
+# --------------------------------------------------------
 #
-#
-# converted by cvpubdef from HOLDINGS_POS: atpeR
-#
-# webpub_s6.def for scope #6 (New Materials Library)
-#
-# converted from HOLDINGS_POS field tag: 'a'
 #
 #suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
 b|a|100..|-e4|Author||b|
@@ -174,13 +169,6 @@ c|2||+|Latest Received||b|&nbsp;
 c|3||+|Latest Received||b|
 c|Q||||b|
 #
-#
-# end pubdef
-#
-#
-# -----------------------------------------------------
-# Converted by cvpubdef from item_col_width: 1(23),Cv#(27),%
-# -----------------------------------------------------
 i|1||||29|b|
 i|C|099|&|Sample ID||b|&nbsp;
 #i|v||||0|b|&nbsp;
@@ -188,4 +176,3 @@ i|C|099|&|Sample ID||b|&nbsp;
 i|Q||||b|
 i|%||||0|b|
 #
-#end converted webpub.def

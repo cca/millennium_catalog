@@ -1,12 +1,8 @@
-# -----------------------------------------------------
-# Converted by cvpubdef from pubdef
-# -----------------------------------------------------
-#
-#
-# converted by cvpubdef from HOLDINGS_POS: atpeR
-#
-#
-# converted from HOLDINGS_POS field tag: 'a'
+# ---------------------------------------------------------
+# This file defines how MARC records display in the catalog
+# To learn the format, see:
+# csdirect.iii.com/manual/rmil_webopac_webpub_def.html
+# ---------------------------------------------------------
 #
 #suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
 b|a|100..|-e4|Author||b|
@@ -166,12 +162,6 @@ c|2||+|Latest Received||b|&nbsp;
 c|3||+|Latest Received||b|
 c|Q||||b|
 #
-# end pubdef
-#
-#
-# -----------------------------------------------------
-# Converted by cvpubdef from item_col_width: 1(23),Cv#(27),%
-# -----------------------------------------------------
 i|1||||29|b|
 i|C||||0|b|&nbsp;
 i|v||||0|b|&nbsp;
@@ -179,4 +169,3 @@ i|v||||0|b|&nbsp;
 i|Q||||b|
 i|%||||0|b|
 #
-#end converted webpub.def
