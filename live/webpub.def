@@ -124,25 +124,24 @@ b|u|740|&|Alt Title||b|
 b|u||&|Add Title||b|
 #
 #suppressing subfield 8 (Source of Class.)
-b|h||-8|Lib. Has||b|
+b|h||-8|Library Has||b|
 #suppressing subfield 7 (Control Subfield)
 b|x|780.0|-7|Continues||b|
-b|x|780.1|-7|Cont.In Part||b|
+b|x|780.1|-7|Continues||b|
 b|x|780.2|-7|Supersedes||b|
-b|x|780.3|-7|Sup.In Part||b|
+b|x|780.3|-7|Supersedes||b|
 b|x|780.4|-7|Formed By||b|
 b|x|780.5|-7|Absorbed||b|
-b|x|780.6|-7|Absrdb.In Pt.||b|
-b|x|780.7|-7|Sep. From||b|
+b|x|780.6|-7|Absorbed||b|
+b|x|780.7|-7|Separated From||b|
 b|x||-7|Continues||b|
 b|w|787|-7|Related To||b|
-b|z|785.0|-7|Cont. By||b|
-b|z|785.1|-7|Cont.In Part ||b|
-b|z|785.2|-7|Supersd By||b|
-b|z|785.3|-7|Sup.In Pt.By||b|
-b|z|785.4|-7|Absorbd By||b|
-b|z|785.5|-7|Abs.In Pt.By||b|
-b|z|785.5|-7|Absorbd||b|
+b|z|785.0|-7|Continued By||b|
+b|z|785.1|-7|Continued By||b|
+b|z|785.2|-7|Superseded By||b|
+b|z|785.3|-7|Superseded By||b|
+b|z|785.4|-7|Absorbed By||b|
+b|z|785.5|-7|Absorbed||b|
 b|z|785.6|-7|Split Into||b|
 b|z|785.7|-7|Merged With ||b|
 b|z|785.8|-7|Changed To ||b|
