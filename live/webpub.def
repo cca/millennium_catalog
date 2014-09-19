@@ -20,6 +20,7 @@ b|e||&|Edition||b|
 b|H|||||
 b|T|||||
 #
+# @todo this section isn't that useful, should go below 5XX, 6XX
 b|r|306|&|Time||b|
 b|r|307|&|Hours||b|
 b|r|310|&|Frequency||b|
@@ -28,6 +29,7 @@ b|r|321|&|Frequency||b|
 b|r|336|&|||b|
 b|r|337|&|||b|
 b|r|338|&|||b|
+# @todo supress 34* fields
 # @todo change to "date"
 b|r|362|&|Pub Date||b|
 b|r||&|Description||b|
