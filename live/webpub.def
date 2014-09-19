@@ -38,8 +38,9 @@ b|r|321|&|Frequency||b|
 b|r|336|&|||b|
 b|r|337|&|||b|
 b|r|338|&|||b|
+# @todo change to "date"
 b|r|362|&|Pub Date||b|
-b|r||&|Descript||b|
+b|r||&|Description||b|
 #
 #suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
 b|s|800..|-e4|Series||b|
@@ -49,21 +50,21 @@ b|s|897..|-e4|Series||b|
 #
 b|s||-6789|Series||b|
 #
-b|n|501|&|With:||b|
+b|n|501|&|With||b|
 b|n|502|&|Thesis||b|
-b|n|504|&|Bibliog.||b|
+b|n|504|&|Bibliography||b|
 b|n|505|&|Contents||b|
 b|n|506|&|Access||b|
 b|n|508|&|Credits||b|
-b|n|510|&|Indexed In:||b|
+b|n|510|&|Indexed In||b|
 b|n|511[^1]|&|Performer||b|
 b|n|5111|&|Cast||b|
 b|n|516|&|File Type||b|
 b|n|520|&|Summary||b|
 b|n|521|&|Audience||b|
-b|n|524|&|Cite As:||b|
+b|n|524|&|Cite As||b|
 b|n|533|&|Reproduction||b|
-b|n|538|&|System Det||b|
+b|n|538|&|System Detail||b|
 b|n|550|&|Issued By||b|
 b|n|555[^0]|&|Indexes||b|
 b|n|5550|&|Finding Aids||b|
@@ -157,7 +158,7 @@ c|i||a|Identity||b|
 c|c||+||b|
 c|Q||||b|
 c|$||+|Location||b|
-c|h||-8x|Lib. Has||b|
+c|h||-8x|Library Has||b|
 c|2||+|Latest Received||b|&nbsp;
 c|3||+|Latest Received||b|
 c|Q||||b|
