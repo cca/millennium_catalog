@@ -4,29 +4,19 @@
 # csdirect.iii.com/manual/rmil_webopac_webpub_def.html
 # ---------------------------------------------------------
 #
-#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
+# suppress subfields e (Relator Term) & 4 (Relator Code)
 b|a|100..|-e4|Author||b|
 b|a|110..|-e4|Corp Author||b|
 #
 b|a|111|&|Conference||b|
 b|a||&|Author||b|
 #
-# converted from HOLDINGS_POS field tag: 't'
-#
 b|t||&|Title||b|
-#
-# converted from HOLDINGS_POS field tag: 'p'
 #
 b|p||&|Imprint||b|
 #
-# converted from HOLDINGS_POS field tag: 'e'
-#
 b|e||&|Edition||b|
 #
-# end HOLDINGS_POS
-#
-#
-# next line added by cvpubdef
 b|H|||||
 b|T|||||
 #
@@ -64,16 +54,19 @@ b|n|520|&|Summary||b|
 b|n|521|&|Audience||b|
 b|n|524|&|Cite As||b|
 b|n|533|&|Reproduction||b|
+# @todo natural language
 b|n|538|&|System Detail||b|
 b|n|550|&|Issued By||b|
 b|n|555[^0]|&|Indexes||b|
 b|n|5550|&|Finding Aids||b|
+# @todo natural language
 b|n|561|&|Provenance||b|
 b|n|586|&|Awards||b|
 b|n|59[0-9]|-8|Local Note||b|
 b|n||-8|Note||b|
 #
-#this seems wrong - y should be tag 999 (misc.) and h represents 856 - AEB 01-30-13
+# this seems wrong - y should be tag 999 (misc.) and h represents 856 - AEB 01-30-13
+# @todo investigate AEB's note above
 b|y|856|u|Econnect||b|
 b|y|[^8][^5][^6]|u|||b|
 b|y||u|Marc||b|
@@ -86,13 +79,13 @@ b|d|650..|-e24|Subject||b|
 b|d|651..|-e24|Subject||b|
 b|d|654..|-e24|Subject||b|
 #
-#suppressing subfield 2 (Source of term)
+# suppressing subfield 2 (Source of term)
 b|d|655|-2|Genre||b|
 #
 #suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
 b|d|662..|-e4|Subject||b|
 #
-#suppressing subfiled 9 from tag 690 (Special Entry) & e (Relator Term) and 4 (Relator Code) from 69x - AEB 01-29-13
+# suppress subfield 9 from tag 690 (Special Entry) & e (Relator Term) and 4 (Relator Code) from 69x
 b|d|69[0-9]..|-e49|Local Subj||b|
 #
 b|d||-29|Subject||b|
@@ -104,7 +97,8 @@ b|d|650.7||||b|
 b|d|650.8||||b|
 b|d|653|&|||b|
 #
-#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
+# suppress subfields e (Relator Term) & 4 (Relator Code)
+# @todo expand abbreviations
 b|b|700..|-e4|Alt Author||b|
 b|b|710..|-e4|Alt Author||b|
 b|b|720..|-e4|Alt Author||b|
@@ -116,6 +110,7 @@ b|b|797..|-e4|Alt Author||b|
 #
 b|b||-7|Alt Author||b|
 #
+# @todo expand abbreviations
 b|u|130|&|Unif Title||b|
 b|u|210|&|Key Title||b|
 b|u|222|&|Key Title||b|
@@ -147,6 +142,8 @@ b|z|785.7|-7|Merged With ||b|
 b|z|785.8|-7|Changed To ||b|
 b|z||-7|Cont'd By||b|
 #
+# @todo hide all standard nums except 020 & 022
+# no one cares what the OCLC number is!
 b|i|020|&|ISBN||b|
 b|i|022|&|ISSN||b|
 b|i|024|&|Standard No.||b|
