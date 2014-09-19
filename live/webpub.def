@@ -77,13 +77,13 @@ b|y|856|u|Econnect||b|
 b|y|[^8][^5][^6]|u|||b|
 b|y||u|Marc||b|
 #
-#suppressing subfields e (Relator Term) and 4 (Relator Code) - AEB 01-29-13
-b|d|600..|-e4|Subject||b|
-b|d|610..|-e4|Subject||b|
-b|d|630..|-e4|Subject||b|
-b|d|650..|-e4|Subject||b|
-b|d|651..|-e4|Subject||b|
-b|d|654..|-e4|Subject||b|
+# suppress subfields e (Relator Term), 2 (Source), 4 (Relator Code)
+b|d|600..|-e24|Subject||b|
+b|d|610..|-e24|Subject||b|
+b|d|630..|-e24|Subject||b|
+b|d|650..|-e24|Subject||b|
+b|d|651..|-e24|Subject||b|
+b|d|654..|-e24|Subject||b|
 #
 #suppressing subfield 2 (Source of term)
 b|d|655|-2|Genre||b|
