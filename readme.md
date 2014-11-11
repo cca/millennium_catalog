@@ -15,4 +15,7 @@ http://csdirect.iii.com/sierrahelp/Content/sril/sril_web_options.html
 
 "webpub.def" defines which MARC fields are displayed or suppressed. It is an arcane format that makes MARC look readable by comparison.
 http://csdirect.iii.com/sierrahelp/Content/sril/sril_webopac_webpub_def.html
-# LICENSE\n\n[Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)\n
+
+# LICENSE
+
+[Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
