@@ -29,6 +29,20 @@ module.exports = function(grunt) {
         }
       }
     },
+    uglify: {
+      options: {
+        compress: {
+          drop_console: true
+        },
+        // @todo doesn't work?
+        report: 'min'
+      },
+      dist: {
+        files: {
+          'live/videosearch.min.js': ['live/videosearch.js']
+        }
+      }
+    },
     watch: {
       sass: {
         files: 'live/*.scss',
