@@ -5,21 +5,21 @@
     <link rel="Shortcut Icon" href="http://libraries.cca.edu/favicon.ico">
     <link title="CCA Library Catalog" rel="search" type="application/opensearchdescription+xml" href="/screens/ccalib.xml" />
     <style>
-
     /* hide Millennium "WebPac Pro" message */
-    body span { visibility: hidden !important; }
-    #column {
+    body span { display: none !important; }
+
+    .column {
         float: left;
         width: 375px;
         clear: none;
         display: inline;
     }
-    #column ul {
+    .column ul {
         color: #333;
         padding: 10px;
         margin: 10px 10px;
     }
-    #column ul li {
+    .column ul li {
         list-style-type: none;
     }
     </style>
@@ -77,7 +77,7 @@
             </div>
 
             <div id="browse">
-                <div id="column">
+                <div class="column">
                     <h2>Online Texts &amp; Resources</h2>
                     <ul>
                         <li>
@@ -161,7 +161,7 @@
                     </ul>
                 </div>
 
-                <div id="column">
+                <div class="column">
                     <h2>Indexes &amp; Bibliographies</h2>
                     <ul>
                         <li>
