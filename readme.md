@@ -4,7 +4,7 @@ CCA's customized Millennium catalog screens & settings.
 
 ## Notes
 
-For now, the files for the **Live** and **Staging** catalogs are separate directories because they've diverged significantly. Eventually, this repository won't need to hold multiple versions of the same file, because after all that's the job of version control.
+There is still a lot of cleanup needed; many files in the "live" directory are outdated backups which should be removed.
 
 Anything uploaded to **Live** is available at {{catalog URL}}/screens while anything uploaded to **Staging** is at {{catalog URL}}:2082/screens. They share the ILS database.
 
