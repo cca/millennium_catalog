@@ -2,40 +2,34 @@
 <html>
 <head>
 <title>CCA Libraries Remote Login</title>
-<link rel="stylesheet" type="text/css" media="all" href="http://library.cca.edu/screens/opacstyles.css" />
-<link rel="Shortcut Icon" href="http://www.cca.edu/library/favicon.ico">
-<base target="_parent">
+<link rel="stylesheet" type="text/css" media="all" href="/screens/opacstyles.css" />
+<link rel="Shortcut Icon" href="/screens/favicon.ico">
+<base>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<STYLE type="text/css">
-.bluheading{
-color: #990000;
-}
-</style>
 </head>
 <body><center>
-<TABLE width="960">
-	<tr><td height="70"><a href="http://libraries.cca.edu"><img src="http://library.cca.edu/screens/ccatheme_logo.gif" alt="CCA Libraries Logo" border="0"></a>
+<table width="960">
+	<tr><td height="70"><a href="http://libraries.cca.edu"><img src="/screens/ccatheme_logo.gif" alt="cca libraries logo" border="0"></a>
 </td></tr>
-	<TR>
- 		<TD class="navbar">
-		&nbsp;&nbsp;<a href="/search/X" target="_parent">Advanced Search</a>
-		&nbsp;|&nbsp;<a href="/search/q" target="_parent">Author/Title</a>
+	<tr>
+ 		<td class="navbar">
+		&nbsp;&nbsp;<a href="/search/X">Advanced Search</a>
 		&nbsp;|&nbsp;<a href="/search">Basic Search</a>
-		&nbsp;|&nbsp;<a href="http://library.cca.edu/screens/coursereserves_search.html" target="_parent">Course Reserves</a>
-		&nbsp;|&nbsp;<a href="http://library.cca.edu/ftlist">New Books &amp; Videos</a>
-		&nbsp;|&nbsp;<a href="http://library.cca.edu/screens/thesis_search.html" target="_parent">Theses</a>
-		&nbsp;|&nbsp;<a href="http://library.cca.edu/screens/videosearch.html" target="_parent">Videos</a>
+		&nbsp;|&nbsp;<a href="/screens/coursereserves_search.html">Course Reserves</a>
+		&nbsp;|&nbsp;<a href="/ftlist">New Books &amp; Videos</a>
+		&nbsp;|&nbsp;<a href="/screens/thesis_search.html">Theses</a>
+		&nbsp;|&nbsp;<a href="/screens/videosearch.html">Videos</a>
 
-		&nbsp;|&nbsp;<a href="http://library.cca.edu/search">Homepage</a>&nbsp;
-		</TD>
-	</TR>
-<TR>
-                    <TD height="10" align="left" valign="top">&nbsp;</TD>
-</TR>
-</TABLE>
+		&nbsp;|&nbsp;<a href="/search">Homepage</a>&nbsp;
+		</td>
+	</tr>
+<tr>
+                    <td height="10" align="left" valign="top">&nbsp;</td>
+</tr>
+</table>
 
 
-<FORM METHOD=POST>
+<form method=post>
 
 
 <table width="960"border="0" cellspacing="0" class="grayborder">
@@ -47,19 +41,19 @@ type "Laetetia Meyer"</td>
 </tr><tr>
         <td>Your name (last name only okay):</td>
 <td>
-<input NAME=name VALUE="" SIZE=40 MAXLENGTH=60></td></tr>
+<input name=name value="" size=40 maxlength=60></td></tr>
 <tr><td></td>
 <td>For example, type "PCAC00001212x"</td>
 </tr>
 <tr>
         <td>The library barcode on your CCA ID:</td>
 <td>
-<input NAME=code TYPE=PASSWORD VALUE="" SIZE=40 MAXLENGTH=40><br>
+<input name=code type=password value="" size=40 maxlength=40><br>
 </td></tr>
 
 
 <tr><td></td>
-<td><input NAME="submit" TYPE="SUBMIT" class="menu" VALUE="SUBMIT"><br><br>
+<td><input name="submit" type="submit" class="menu" value="submit"><br><br>
 </td>
 </tr>
 <tr><td colspan="2">
@@ -71,12 +65,11 @@ If you are registered for Spring 2011 classes, your library record can be update
 <li>All checked out material must be physically returned to the library and checked in (or renewed).</li>
 </ol>
 If there are limitations that prevent you from logging into a database from home, you may call the library circulation desk for assistance at 510.594.3658 or 415.703.9574.</td></tr>
-</table></form>
-<div ALIGN=LEFT>
-<script LANGUAGE="javascript" >
-<!-- Hide the JS
-function replace_or_redraw( new_URL )
-{
+</table>
+</form>
+<div align=left>
+<script>
+function replace_or_redraw( new_URL ) {
 if( navigator.appVersion.charAt( 0 ) < '3' )
 	location = new_URL;
 else
@@ -84,23 +77,20 @@ else
 return false;
 }
 
-function replace_or_redraw_parent( new_URL )
-{
+function replace_or_redraw_parent( new_URL ) {
 if( navigator.appVersion.charAt( 0 ) < '3' )
 	parent.location = new_URL;
 else
 	parent.location.replace( new_URL );
 return false;
 }
-function open_new_window( new_URL )
-{
+function open_new_window( new_URL ) {
 var w = (window.open(new_URL, 'patwin', 'width=550,height=650,status=yes,scrollbars=yes,resizable'));
-w.focus();
-return false;
-}
 
-// Unhide the JS -->
-</SCRIPT>
+	w.focus();
+	return false;
+}
+</script>
 <noscript>
 <p class="standard"> To enable secure viewing of your record, this page requires
 JavaScript. Please enable JavaScript in your browser and reload this page.
@@ -108,14 +98,8 @@ JavaScript. Please enable JavaScript in your browser and reload this page.
 </noscript>
 </div>
 <br></center>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-131604-4");
-pageTracker._initData();
-pageTracker._trackPageview();
+<script>
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-131604-4"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
 </script>
 </body>
 </html>
