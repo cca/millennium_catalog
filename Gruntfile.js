@@ -40,7 +40,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'live/videosearch.min.js': ['live/videosearch.js'],
-          'live/thesis.min.js': ['live/thesis.js']
+          'live/thesis.min.js': ['live/thesis.js'],
+          'live/nml-adv.min.js': ['live/nml-adv.js']
         }
       }
     },
