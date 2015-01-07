@@ -4,8 +4,6 @@ CCA's customized Millennium catalog screens & settings.
 
 ## Notes
 
-There is still a lot of cleanup needed; many files are outdated backups which should be removed.
-
 Anything uploaded to **Live** is available at {{catalog URL}}/screens while anything uploaded to **Staging** is at {{catalog URL}}:2082/screens. They share the ILS database.
 
 If you're looking at a catalog page & wondering what file it is, there'll be a comment outside the closing `</html>` tag at the bottom of the file. For instance, our default "search" page notes that `<!--this is customized <screens/opacmenu_s2.html>-->`.
