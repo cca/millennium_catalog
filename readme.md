@@ -4,7 +4,7 @@ CCA's customized Millennium catalog screens & settings.
 
 ## Notes
 
-There is still a lot of cleanup needed; many files in the "live" directory are outdated backups which should be removed.
+There is still a lot of cleanup needed; many files are outdated backups which should be removed.
 
 Anything uploaded to **Live** is available at {{catalog URL}}/screens while anything uploaded to **Staging** is at {{catalog URL}}:2082/screens. They share the ILS database.
 
