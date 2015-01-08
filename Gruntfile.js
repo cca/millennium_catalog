@@ -13,13 +13,13 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       dist: {
-        src: [ 'live/*.js' ]
+        src: [ 'js/*.js' ]
       }
     },
     sass: {
       dist: {
         files: {
-          'live/styles.css': 'live/styles.scss'
+          'css/styles.css': 'css/styles.scss'
         },
         options: {
           sourcemap: 'none',
@@ -33,27 +33,25 @@ module.exports = function(grunt) {
       options: {
         compress: {
           drop_console: true
-        },
-        // @todo doesn't work?
-        report: 'min'
+        }
       },
       dist: {
         files: {
-          'live/videosearch.min.js': ['live/videosearch.js'],
-          'live/thesis.min.js': ['live/thesis.js'],
-          'live/nml-adv.min.js': ['live/nml-adv.js']
+          'js/videosearch.min.js': ['js/videosearch.js'],
+          'js/thesis.min.js': ['js/thesis.js'],
+          'js/nml-adv.min.js': ['js/nml-adv.js']
         }
       }
     },
     watch: {
       sass: {
-        files: 'live/*.scss',
+        files: 'css/*.scss',
         tasks: ['sass']
       },
       jshint: {
         files: [
-          'live/*.js'
-          , '!live/jquery.*.js'
+          'js/*.js'
+          , '!js/jquery.*.js'
           ],
         tasks: ['jshint']
       }
@@ -62,7 +60,7 @@ module.exports = function(grunt) {
 
   // shortcuts, multi-tasks
   grunt.registerTask('test', ['jshint']); // @todo scss-lint
-  grunt.registerTask('build', ['sass']); // @todo uglify JS
+  grunt.registerTask('build', ['sass', 'uglify']);
   grunt.registerTask('default', ['sass']);
 
 };
