@@ -531,8 +531,6 @@ span.briefCitItems table.bibItems {
     padding: 3px;
 }
 
-
-
 /*------------------------ OPAC SEARCH SCREENS ------------------------  */
 #page, #pagemod {
     margin: 15px auto;
@@ -562,19 +560,22 @@ form#search #submit a {
     margin-left: 10px;
 }
 
-#page p, #pagemod p {
+#page p,
+#pagemod p {
     font-size: 12px;
     margin-left: 25px;
 }
 
-#grayborder {
+// @todo delete first selector when all HTML references have been removed
+#grayborder,
+.box {
     border: 1px solid #999;
-    color: #222;
-    font-size: 12px;
     padding: 20px 10px 20px 30px;
 }
 
-#page input[type="text"], #page #grayborder #searchcontainer #search input {
+#page input[type="text"],
+#page #grayborder #searchcontainer #search input,
+#page .box #searchcontainer #search input {
     border: 1px solid #CCC;
     font-size: 13px;
     height: 15px;
@@ -867,10 +868,6 @@ input[name="jumpto"] {
     font-size: 12px;
     width: 150px;
 }
-
-
-
-
 
 // ------------------------ OPAC CHECKIN SCREEN ------------------------
 

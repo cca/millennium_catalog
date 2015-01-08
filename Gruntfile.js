@@ -19,7 +19,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'css/styles.css': 'css/styles.scss'
+          'css/styles.css': 'css/styles.scss',
+          'css/styles_s6.css': 'css/styles_s6.scss'
         },
         options: {
           sourcemap: 'none',
@@ -37,9 +38,9 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'js/videosearch.min.js': ['js/videosearch.js'],
-          'js/thesis.min.js': ['js/thesis.js'],
-          'js/nml-adv.min.js': ['js/nml-adv.js']
+          'js/videosearch.min.js': 'js/videosearch.js',
+          'js/thesis.min.js': 'js/thesis.js',
+          'js/nml-adv.min.js': 'js/nml-adv.js'
         }
       }
     },
