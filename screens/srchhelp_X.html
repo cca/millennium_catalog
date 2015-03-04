@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CCA Libraries Catalog Advanced Search</title>
-<link rel="Shortcut Icon" href="/search/favicon.ico">
-<style>
-form#search select {
-font-size: 12px;
-}
-</style>
-
+    <title>CCA Libraries Catalog Advanced Search</title>
+    <link rel="Shortcut Icon" href="/search/favicon.ico">
 </head>
 <body>
 <div id="page">
 <!--{advancedsearchbody}-->
 <!--{toplogo}-->
     <div class="box">
-			<h2>Advanced Searching and Limiting</h2>
-			<div id="searchcontainer">
+        <h2>Advanced Searching and Limiting</h2>
+        <div id="searchcontainer">
 
 <em>
 <!--{msg}-->
 <!--{spellcheck}-->
 </em>
 
-
 <!--{advancedsearchformbegin}-->
 <!--{advancedsearch}-->
 
-<p></p>
+<br><br>
 
 <input type="hidden" name="startLimit" >
 <!--{availlim}-->
@@ -37,51 +30,59 @@ font-size: 12px;
 <div id="datelimit">
 <!--{DOCDATE}-->
 </div>
-<div class="formEntryArea"> <table border="0">
-<tr><td><label for="b">Location:</label></td><td>
+<div class="formEntryArea">
+    <table border="0">
+        <tr>
+            <td><label for="b">Location:</label></td>
+            <td>
                 <select name=b >
-                <option value="">All </option>
-                <option value="mn"> Meyer Library (Oak)</option>
-                <option value="sf"> Simpson Library (SF)</option>
-                <option value="matlb"> New Materials Library (SF)</option>
-                <option value="spcl"> Special Collections</option>
-                <option value="cca"> CCA/C Archives</option>
+                <option value="">All</option>
+                <option value="mn">Meyer Library (Oak)</option>
+                <option value="sf">Simpson Library (SF)</option>
+                <option value="matlb">New Materials Library (SF)</option>
+                <option value="spcl">Special Collections</option>
+                <option value="cca">CCA/C Archives</option>
                 </select>
-               </td>
-</tr></table>
+           </td>
+        </tr>
+    </table>
  </div>
 
-
-
-<div class="formEntryArea"> <table border="0">
-<tr><td><label for="m">Material Type:</label></td><td>
+<div class="formEntryArea">
+    <table border="0">
+        <tr>
+            <td><label for="m">Material Type:</label></td>
+            <td>
                 <select name=m ><option value="">Any</option>
-<option value="a">Book</option>
-<option value="b">Periodical</option>
-<option value="g">Video DVD</option>
-<option value="h">Videocassette</option>
-<option value="n">Annual</option>
-<option value="@">Book with online</option>
-<option value="m">Computer file</option>
-<option value="1">E-Book</option>
-<option value="2">E-Journal</option>
-<option value="k">Graphic</option>
-<option value="o">Kit</option>
-<option value="t">Manuscript</option>
-<option value="e">Map or Atlas</option>
-<option value="p">Mixed Media</option>
-<option value="j">Music Recording</option>
-<option value="i">Non-music Recording</option>
-<option value="r">Object</option>
-<option value="s">Streaming Media</option>
-<option value="4">Web Resource</option>
-</select>
-</td></tr></table>
+                    <option value="a">Book</option>
+                    <option value="b">Periodical</option>
+                    <option value="g">Video DVD</option>
+                    <option value="h">Videocassette</option>
+                    <option value="n">Annual</option>
+                    <option value="@">Book with online</option>
+                    <option value="m">Computer file</option>
+                    <option value="1">E-Book</option>
+                    <option value="2">E-Journal</option>
+                    <option value="k">Graphic</option>
+                    <option value="o">Kit</option>
+                    <option value="t">Manuscript</option>
+                    <option value="e">Map or Atlas</option>
+                    <option value="p">Mixed Media</option>
+                    <option value="j">Music Recording</option>
+                    <option value="i">Non-music Recording</option>
+                    <option value="r">Object</option>
+                    <option value="s">Streaming Media</option>
+                    <option value="4">Web Resource</option>
+                </select>
+            </td>
+        </tr>
+    </table>
 </div>
 
 <div class="formEntryArea">
 <!--{lang}-->
 </div>
+
 <div class="formEntryArea" id="advsort">
 <!--{sort}-->
 </div>
@@ -89,35 +90,47 @@ font-size: 12px;
 <input type="hidden" name="endLimit" >
 
 <div id="submit">
-<input type="hidden" name="startLimit" /><div id="selectscope">
-		<label for="searchscope" style="display:none;">Search Scope</label><select name="searchscope" id="searchscope">
-			<option value="2" selected="selected"> Library Collection</option>
-			<option value="3"> Books only</option>
-			<option value="4"> Videos + Media only</option>
-			<option value="5"> Electronic Resources</option>
-			<option value="6"> Materials Library</option>
-			<option value="7"> CCA/C Archives</option>
-			<option value="1"> Entire library catalog</option>
-			<option value="9"> Items not in library</option>
-			</select>
+<input type="hidden" name="startLimit" />
+    <div id="selectscope">
+    	<label for="searchscope" style="display:none;">Search Scope</label>
+        <select name="searchscope" id="searchscope" style="vertical-align: top;">
+    		<option value="2" selected="selected"> Library Collection</option>
+    		<option value="3"> Books only</option>
+    		<option value="4"> Videos + Media only</option>
+    		<option value="5"> Electronic Resources</option>
+    		<option value="6"> Materials Library</option>
+    		<option value="7"> CCA/C Archives</option>
+    		<option value="1"> Entire library catalog</option>
+    		<option value="9"> Items not in library</option>
+    	</select>
 
 <!--{advancedsubmit}-->
-</div></div>
+
+    </div>
+</div>
 
 <!--{advancedsearchformend}-->
+
 </div>
-    <div id="browse"><ul><li>Keywords are those found in the author, title, subject, and note fields.</li>
-    <li>Select search field, enter text, select boolean operator; limit if desired; then click the 'find' button.</li>
-    <li>Use <a href="/search/">Basic Search</a> to search by other fields, like call number.</li>
-    <li><em>If the current screen reappears, no results have been found.  Try again.</em></li></ul></div>
-	<div id="searchhelp">
-        <a href="/patroninfo">Renew books</a> | <a href="mailto:refdesk@cca.edu?Subject=Ask a Librarian">Ask a librarian</a> | <a href="/screens/searchhelp.html">Search help</a>
-    </div>
- </div>
-  <div id="footer">
-    Meyer Library: 5212 Broadway, Oakland, CA 94618 (510.594.3658) Simpson Library: 1111 8th St, San Francisco, CA 94107 (415.703.9574)<br /><a href="http://www.cca.edu">California College of the Arts</a>
-  </div>
+        <div id="browse">
+            <ul>
+                <li>Keywords are those found in the author, title, subject, and note fields.</li>
+                <li>Select search field, enter text, select boolean operator; limit if desired; then click the 'find' button.</li>
+                <li>Use <a href="/search/">Basic Search</a> to search by other fields, like call number.</li>
+                <li><em>If the current screen reappears, no results have been found.  Try again.</em></li>
+            </ul>
+        </div>
+
+    	<div id="searchhelp">
+            <a href="/patroninfo">Renew books</a> | <a href="mailto:refdesk@cca.edu?Subject=Ask a Librarian">Ask a librarian</a> | <a href="/screens/searchhelp.html">Search help</a>
+        </div>
+    </div> <!-- /.box -->
+
+<div id="footer">
+Meyer Library: 5212 Broadway, Oakland, CA 94618 (510.594.3658) Simpson Library: 1111 8th St, San Francisco, CA 94107 (415.703.9574)<br /><a href="http://www.cca.edu">California College of the Arts</a>
 </div>
+
+</div> <!-- /#page -->
 
 <script>
 var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-131604-4"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
