@@ -5,6 +5,11 @@
     <base target="_parent">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+    #page input[type="text"] {
+        height: 26px;
+    }
+    </style>
 </head>
 <body>
 <div id="page">
@@ -23,12 +28,12 @@
         <p class="bg-warning alert-box"><b>Students</b>: You will not be able to check out or renew books past May 8th unless you have updated your account with the library in person.</p>
         <div id="searchcontainer">
             <form name="patform" method="POST">
-                <div id="onetwofive">Name:</div>
-                <input name=name value="" type="text">
+                <label for="name" id="onetwofive">Name:</label>
+                <input name="name" value="" type="text">
                 <p class="caption">For example, type "Laetetia Meyer" or "Meyer" <span class="text-danger">[NOT your webmail name]</span></p>
 
-                <div id="onetwofive">Library barcode:</div>
-                <input type="text" name=code>
+                <label for="code" id="onetwofive">Library barcode:</label>
+                <input type="text" name="code">
                 <p class="caption">From the back of your CCA ID, for example: "PCAC00001212x" <span class="text-danger">[no spaces]</span></p>
 
                 <div id="submit"><input name="submit" type="submit" VALUE="Submit"></div>
