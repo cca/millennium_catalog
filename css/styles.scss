@@ -687,6 +687,8 @@ label[for="searchscope"] {
     margin: 0px 7px;
 }
 
+/* @todo wth do these IDs mean?
+they're used all over */
 #onetwofive {
     display: inline;
     float: left;
@@ -697,13 +699,15 @@ label[for="searchscope"] {
     color: #333;
 }
 
-#fourhundred, #twohundred {
+#fourhundred,
+#twohundred {
     clear: none;
     display: inline;
     float: left;
 }
 
-#twohundred select, #threehundred select {
+#twohundred select,
+#threehundred select {
     width: 200px;
 }
 
