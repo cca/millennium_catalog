@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CCA Libraries Patron Record</title>
-<link rel="Shortcut Icon" href="/search/favicon.ico">
-<base target="_parent">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<style>
-  #browse ol {
-	width: 600px;
-  }
-  </style>
+    <title>CCA Libraries Patron Record</title>
+    <base target="_parent">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
-<body><div id="page">
-    <a href="http://libraries.cca.edu"><img src="/screens/ccatheme_logo.gif" alt="CCA Libraries Logo" border="0"></a>
+<body>
+<div id="page">
+    <a href="http://libraries.cca.edu"><img src="/screens/ccatheme_logo.gif" alt="CCA Libraries Logo"></a>
     <div id="navbar">
           <a href="/search/X">Advanced Search</a>
           &nbsp;|&nbsp;<a href="/search">Basic Search</a>
@@ -22,34 +18,35 @@
           &nbsp;|&nbsp;<a href="/screens/thesis_search.html">Theses</a>
           &nbsp;|&nbsp;<a href="/screens/videosearch.html">Videos</a>
     </div>
-    <div class="box">
-	<h2>Patron login</h2>
-<div id="searchcontainer">
-<form name="patform" method="POST">
-<div id="onetwofive">Name:</div>
-<input name=name value="" type="text">
-<p class="caption">For example, type "Laetetia Meyer" or "Meyer" <span style="color:#990000;">[NOT your webmail name]</span></p>
+    <div>
+    	<h2>Patron Login</h2>
+        <p class="bg-warning alert-box"><b>Students</b>: You will not be able to check out or renew books past May 8th unless you have updated your account with the library in person.</p>
+        <div id="searchcontainer">
+            <form name="patform" method="POST">
+                <div id="onetwofive">Name:</div>
+                <input name=name value="" type="text">
+                <p class="caption">For example, type "Laetetia Meyer" or "Meyer" <span class="text-danger">[NOT your webmail name]</span></p>
 
-<div id="onetwofive">Library barcode:</div>
-<input type="text" name=code>
-<p class="caption">From the back of your CCA ID, for example: "PCAC00001212x"<span style="color:#990000;"> [no spaces]</span></p>
+                <div id="onetwofive">Library barcode:</div>
+                <input type="text" name=code>
+                <p class="caption">From the back of your CCA ID, for example: "PCAC00001212x" <span class="text-danger">[no spaces]</span></p>
 
-<div id="submit"><input name="submit" type="submit" VALUE="Submit"></div>
-</div>
+                <div id="submit"><input name="submit" type="submit" VALUE="Submit"></div>
+            </form>
+        </div>
 
-<div id="browse">
-<p class="note"><em>Not working?</em>
-<ol>
-<li>Confirm that you're inputting your last name and barcode correctly.</li>
-<li>If you're on Firefox try Safari, Chrome, or Internet Explorer.</li>
-<li>Update to Firefox 4.0 or above</li>
-</ol>
-<em>Still not working?</em> Your library account may have expired. Call the library circulation desk at 510.594.3658 (Oak) or 415.703.9574 (SF).
-</p>
-</div>
-</form>
+        <div id="browse">
+            <p><em>Not working?</em>
+                <ol>
+                    <li>Confirm that you're inputting your last name and barcode correctly.</li>
+                    <li>If you're on Firefox try Safari, Chrome, or Internet Explorer.</li>
+                    <li>Update to Firefox 4.0 or above</li>
+                </ol>
+                <em>Still not working?</em> Your library account may have expired. Call the library circulation desk at 510.594.3658 (Oak) or 415.703.9574 (SF).
+            </p>
+        </div>
+    </div>
 
- </div>
     <div id="footer">
         Meyer Library: 5212 Broadway, Oakland, CA 94618 (510.594.3658) Simpson Library: 1111 8th St, San Francisco, CA 94107 (415.703.9574)
     </div>
