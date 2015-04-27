@@ -89,7 +89,7 @@ span.bookjacket a img {
 }
 
 td.briefCitEntry {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $light-gray;
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -113,7 +113,7 @@ td.briefCitEntry {
 .patFuncCallNo,
 .patFuncHeaders,
 .patFuncTitle {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $light-gray;
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -121,14 +121,14 @@ td.briefCitEntry {
 }
 
 .ftlistHeader th {
-    color: #333;
+    color: $dark-gray;
     font-weight: normal;
     margin: 5px;
 }
 
 tr.browseSuperEntry td,
 tr.browseSubEntry td {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $light-gray;
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -181,7 +181,7 @@ table.bibItems {
 .bibItemsHeader {
     align: center;
     background: #ececec;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $light-gray;
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -191,7 +191,7 @@ table.bibItems {
 
 .briefCitRow {
     align: left;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $light-gray;
 }
 
 .bibItemsEntry td,
@@ -216,7 +216,7 @@ table.bibItems {
 
 .briefCitItems table {
     background: #eee;
-    border: 1px dotted #ccc;
+    border: 1px dotted $light-gray;
     color: $danger;
     margin-left: 5%;
     margin-top: 8px;
@@ -229,7 +229,7 @@ table.reserveBibs td {
 }
 
 span .bibItemsHeader {
-    background: #ccc;
+    background: $light-gray;
     border-bottom: 0;
     color: #000;
     font-size: 90%;
@@ -386,7 +386,7 @@ dd.addthis {
 .bibPager a,
 .browsePager a {
     background: #eee;
-    border: 1px dotted #ccc;
+    border: 1px dotted $light-gray;
     padding: 2px;
 }
 
@@ -406,7 +406,7 @@ dd.addthis {
 
 input[type=submit],
 .browseSaveJump input {
-    background-color: #ccc;
+    background-color: $light-gray;
     border: 1px solid $blue;
     cell-padding: 1px;
     color: $blue;
@@ -422,7 +422,7 @@ a:visited {
 table.patFunc,
 table.bibInfo {
     border: 1px;
-    border-color: #ccc;
+    border-color: $light-gray;
     border-style: solid;
     padding: 0;
     spacing: 0;
@@ -454,7 +454,7 @@ table.briefCit,
 tr.browseEntry td,
 tr.yourEntryWouldBeHere td,
 briefCitEntry {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $light-gray;
     padding: 5px 0px;
 }
 
@@ -468,7 +468,7 @@ table.bibHoldings {
 }
 
 table.bibHoldings, table.bibLinks {
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
 }
 
 .bibInfoLabel,
@@ -520,7 +520,7 @@ span.briefCitItems table.bibItems {
 }
 
 .deleteSelected a {
-    background-color: #ccc;
+    background-color: $light-gray;
     border: 1px solid $blue;
     color: $blue;
     font-size: 11px;
@@ -534,7 +534,7 @@ span.briefCitItems table.bibItems {
 }
 
 #navbar {
-    background-color: #ccc;
+    background-color: $light-gray;
     font-size: 12px;
     letter-spacing: 1px;
     margin: 15px auto;
@@ -570,7 +570,7 @@ form#search #submit a {
 
 #page input[type="text"],
 #page .box #searchcontainer #search input {
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     font-size: 13px;
     height: 15px;
     padding: 3px;
@@ -584,7 +584,7 @@ form#search #submit a {
 }
 
 #searchcontainer input[type="submit"] {
-    background: #ccc;
+    background: $light-gray;
     border: 1px solid #777;
     color: #027;
     font-size: 12px;
@@ -664,7 +664,7 @@ label[for="searchscope"] {
 }
 
 #searchcontainer h3 {
-    color: #333;
+    color: $dark-gray;
     font-size: 13px;
     font-style: italic;
     font-weight: normal;
@@ -698,7 +698,7 @@ they're used all over */
     padding: 11px 0px 0px 0px;
     text-align: left;
     width: 125px;
-    color: #333;
+    color: $dark-gray;
 }
 
 #fourhundred,
@@ -725,7 +725,7 @@ they're used all over */
 }
 
 #page h2, #pagemod h2 {
-    color: #333;
+    color: $dark-gray;
     font-weight: normal;
     margin: 0px 0px 0px 25px;
 }
@@ -757,7 +757,7 @@ they're used all over */
 }
 
 #column ul {
-    color: #333;
+    color: $dark-gray;
     padding: 10px;
     margin: 5px 20px;
 }
@@ -809,7 +809,7 @@ input.year {
 }
 
 #year input[type="text"] {
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     font-size: 13px;
     height: 15px;
     margin-top: 5px;
@@ -840,14 +840,14 @@ div pre {
 
 input[name="jumpto"] {
     background: white;
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     color: #111;
     padding: 2px;
     text-align: center;
 }
 
 .bibHoldingsEntry, .bibHoldingsLabel {
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1px dotted $light-gray;
     padding: 3px 0px 3px 10px;
     text-align: left;
 }
