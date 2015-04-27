@@ -1,19 +1,21 @@
+@import '_colors';
+@import '_vars';
+
 body {
     background-color: #fff;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: $font-stack;
     font-size: 13px;
     font-style: normal;
-    font-weight: 400;
     margin: 0;
     padding: 0;
 }
 
 strong {
-    font-weight: 700;
+    font-weight: bold;
 }
 
 em, i {
-    color: #661B1B;
+    color: $danger;
 }
 
 div,
@@ -28,7 +30,7 @@ textarea {
 }
 
 input[type=checkbox] {
-    background-color: #B7C9F9;
+    background-color: #b7c9f9;
 }
 
 table {
@@ -37,14 +39,14 @@ table {
 }
 
 td {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: $font-stack;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
 }
 
 th {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: $font-stack;
     font-size: 14px;
 }
 
@@ -134,7 +136,7 @@ tr.browseSubEntry td {
 }
 
 .browseSubEntryData {
-    background-color: #ECECEC;
+    background-color: #ececec;
     font-size: 90%;
 }
 
@@ -178,7 +180,7 @@ table.bibItems {
 
 .bibItemsHeader {
     align: center;
-    background: #ECECEC;
+    background: #ececec;
     border-bottom: 1px solid #ccc;
     border-left: 0;
     border-right: 0;
@@ -208,14 +210,14 @@ table.bibItems {
 
 .bibOrderEntry td {
     border: 0;
-    color: #900;
+    color: $danger;
     text-align: center;
 }
 
 .briefCitItems table {
-    background: #EEE;
-    border: 1px dotted #CCC;
-    color: #900;
+    background: #eee;
+    border: 1px dotted #ccc;
+    color: $danger;
     margin-left: 5%;
     margin-top: 8px;
     text-align: center;
@@ -281,7 +283,7 @@ h1.bibDisplayTitle {
 }
 
 #bibDisplayContentMain {
-    border: 1px dotted #AAA;
+    border: 1px dotted #aaa;
     margin: 0 auto;
     padding: 10px 0;
     text-align: center;
@@ -356,7 +358,7 @@ dd.addthis {
 
 #recordlink {
     background: #eee;
-    border: 1px dotted #BBB;
+    border: 1px dotted #bbb;
     font-size: 90%;
     margin: 5px 120px 0;
     padding: 3px;
@@ -383,8 +385,8 @@ dd.addthis {
 
 .bibPager a,
 .browsePager a {
-    background: #EEE;
-    border: 1px dotted #CCC;
+    background: #eee;
+    border: 1px dotted #ccc;
     padding: 2px;
 }
 
@@ -405,15 +407,15 @@ dd.addthis {
 input[type=submit],
 .browseSaveJump input {
     background-color: #ccc;
-    border: 1px solid #072e99;
+    border: 1px solid $blue;
     cell-padding: 1px;
-    color: #072e99;
+    color: $blue;
 }
 
 a:link,
 a:active,
 a:visited {
-    color: #072e99;
+    color: $blue;
     text-decoration: none;
 }
 
@@ -500,7 +502,7 @@ span.briefCitItems table.bibItems {
 }
 
 #padleft a {
-    border-bottom: 1px dotted #0e2799;
+    border-bottom: 1px dotted $blue;
 }
 
 #hideit {
@@ -518,9 +520,9 @@ span.briefCitItems table.bibItems {
 }
 
 .deleteSelected a {
-    background-color: #CCC;
-    border: 1px solid #072E99;
-    color: #072E99;
+    background-color: #ccc;
+    border: 1px solid $blue;
+    color: $blue;
     font-size: 11px;
     padding: 3px;
 }
@@ -532,7 +534,7 @@ span.briefCitItems table.bibItems {
 }
 
 #navbar {
-    background-color: #CCC;
+    background-color: #ccc;
     font-size: 12px;
     letter-spacing: 1px;
     margin: 15px auto;
@@ -568,7 +570,7 @@ form#search #submit a {
 
 #page input[type="text"],
 #page .box #searchcontainer #search input {
-    border: 1px solid #CCC;
+    border: 1px solid #ccc;
     font-size: 13px;
     height: 15px;
     padding: 3px;
@@ -582,7 +584,7 @@ form#search #submit a {
 }
 
 #searchcontainer input[type="submit"] {
-    background: #CCC;
+    background: #ccc;
     border: 1px solid #777;
     color: #027;
     font-size: 12px;
@@ -644,7 +646,7 @@ label[for="searchscope"] {
 #advsort label {
     width: 130px;
     float: left;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: $font-stack;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -652,7 +654,7 @@ label[for="searchscope"] {
 }
 
 #searchcontainer {
-    background: #EEE;
+    background: #eee;
     border: 1px solid #777;
     clear: both;
     float: left;
@@ -733,16 +735,18 @@ they're used all over */
     list-style-type: circle;
 }
 
-#browse ol {
-    border: 1px solid #900;
-    background: #eee;
-    padding: 10px;
-    margin: 5px 20px;
-    width: 400px;
-}
+#browse {
+    ol {
+        border: 1px solid $danger;
+        background: #eee;
+        padding: 10px;
+        margin: 5px 20px;
+        width: 600px;
 
-#browse ol li {
-    margin: 5px 25px;
+        li {
+            margin: 5px 25px;
+        }
+    }
 }
 
 #column {
@@ -805,7 +809,7 @@ input.year {
 }
 
 #year input[type="text"] {
-    border: 1px solid #CCC;
+    border: 1px solid #ccc;
     font-size: 13px;
     height: 15px;
     margin-top: 5px;
@@ -826,7 +830,7 @@ div.bibPager div {
 }
 
 form#search em h2 {
-    color: #900;
+    color: $danger;
 }
 
 div pre {
@@ -836,14 +840,14 @@ div pre {
 
 input[name="jumpto"] {
     background: white;
-    border: 1px solid #CCC;
+    border: 1px solid #ccc;
     color: #111;
     padding: 2px;
     text-align: center;
 }
 
 .bibHoldingsEntry, .bibHoldingsLabel {
-    border-bottom: 1px dotted #CCC;
+    border-bottom: 1px dotted #ccc;
     padding: 3px 0px 3px 10px;
     text-align: left;
 }
@@ -852,7 +856,7 @@ input[name="jumpto"] {
     max-height: 24px;
     max-width: 80px;
     min-height: 22px;
-    border: 1px solid #072E99;
+    border: 1px solid $blue;
 }
 
 #selectscope {
@@ -865,39 +869,5 @@ input[name="jumpto"] {
     width: 150px;
 }
 
-// ------------------------ OPAC CHECKIN SCREEN ------------------------
-
-.checkinInfo {
-}
-
-.checkinInfoLabel {
-    float: left;
-    width: 20%;
-    height: 15pt;
-    margin-left: 325px;
-    font-weight: bold;
-}
-
-.checkinInfoData {
-    float: right;
-    width: 73%;
-    height: 25pt;
-}
-
-.checkinInfoHoldingsLabel {
-    float: left;
-    width: 20%;
-    height: 25pt;
-    margin-left: 325px;
-    font-weight: bold;
-}
-
-.checkinInfoHoldingsData {
-    float: right;
-    width: 73%;
-    height: 45pt;
-}
-
-.checkinCard {
-    clear: both;
-}
+@import '_checkin';
+@import '_utils';

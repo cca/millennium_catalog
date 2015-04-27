@@ -1,0 +1,35 @@
+.checkinInfo {
+}
+
+// @todo why are pt height units used throughout here?
+.checkinInfoLabel {
+    float: left;
+    font-weight: bold;
+    height: 15pt;
+    margin-left: 325px;
+    width: 20%;
+}
+
+.checkinInfoData {
+    float: right;
+    height: 25pt;
+    width: 73%;
+}
+
+.checkinInfoHoldingsLabel {
+    float: left;
+    font-weight: bold;
+    height: 25pt;
+    margin-left: 325px;
+    width: 20%;
+}
+
+.checkinInfoHoldingsData {
+    float: right;
+    height: 45pt;
+    width: 73%;
+}
+
+.checkinCard {
+    clear: both;
+}
