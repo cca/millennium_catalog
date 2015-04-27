@@ -10,4 +10,7 @@ a.text-danger:hover {
     margin-bottom: 1em;
     margin-top: 1em;
     padding: 1em;
+    // magic number so box looks good on Patron Login page
+    // will need to be changed if we move to more sane layout/sizing system
+    width: 768px;
 }
