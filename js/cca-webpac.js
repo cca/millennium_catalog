@@ -635,8 +635,8 @@ for(var k = 0; k < divs.length; k++) {
 
 }
 
-<!-- from CITETHIS.js -->
-<!-- add bib title to <title> tag -->
+// from CITETHIS.js
+// add bib title to <title> tag
 try
 {
 var tr = document.getElementsByTagName('TR');
@@ -673,7 +673,7 @@ catch(e)
   }
 
 
-<!-- begin "Cite This" script from IUG list. -->
+// begin "Cite This" script from IUG list
 try
 {
 var tr = document.getElementsByTagName('TR');
