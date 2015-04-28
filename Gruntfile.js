@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       options: {
+        asi: true,
         browser: true,
         laxcomma: true,
         globals: {}
@@ -13,7 +14,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       dist: {
-        src: [ 'js/*.js' ]
+        src: [ 'js/*.js', '!js/*.min.js' ]
       }
     },
     sass: {
