@@ -4,7 +4,14 @@
 # csdirect.iii.com/manual/rmil_webopac_webpub_def.html
 # ---------------------------------------------------------
 #
+# format:
+# [record type]|[field tag]|[marctag/indicators]|[subfields]|[label]|[column %]|[display context]|[append]
+#
+# different "field tags":
+# http://csdirect.iii.com/manual/rmil_records_varfld_types_biblio.html
+#
 # suppress subfields e (Relator Term) & 4 (Relator Code)
+# field tag a => Author
 b|a|100..|-e4|Author||b|
 b|a|110..|-e4|Corp Author||b|
 #
@@ -21,6 +28,7 @@ b|H|||||
 b|T|||||
 #
 # @todo this section isn't that useful, should go below 5XX, 6XX
+# r => Description section
 b|r|306|&|Time||b|
 b|r|307|&|Hours||b|
 b|r|310|&|Frequency||b|
