@@ -34,10 +34,10 @@ b|r|307|&|Hours||b|
 b|r|310|&|Frequency||b|
 b|r|315|-6789|Frequency||b|
 b|r|321|&|Frequency||b|
-b|r|336|&|||b|
-b|r|337|&|||b|
-b|r|338|&|||b|
-# @todo supress 34* fields
+# suppress some 33* RDA fields
+b|r|33[6-8]|&|||b|
+# suppress 34* |2 (Source) which is often just "rda"
+b|r|34...|-2|Description||b|
 # @todo change to "date"
 b|r|362|&|Pub Date||b|
 b|r||&|Description||b|
