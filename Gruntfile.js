@@ -39,10 +39,23 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
+					// @todo these should end up in a build or dist folder
+					// rather than sitting alongside the uncompressed files
 					'js/videosearch.min.js': 'js/videosearch.js',
 					'js/thesis.min.js': 'js/thesis.js',
 					'js/nml-adv.min.js': 'js/nml-adv.js',
-					'js/nml.min.js': ['js/nml-images.js', 'js/note.js', 'js/ga.js']
+					'js/nml.min.js': [
+						'js/nml-images.js'
+						, 'js/fancybox-init.js'
+						, 'js/note.js'
+						, 'js/ga.js'
+					],
+					'js/catalog.min.js': [
+						'js/cca-webpac.js'
+						, 'js/fancybox-init.js'
+						, 'js/note.js'
+						, 'js/ga.js'
+					]
 				}
 			}
 		},
