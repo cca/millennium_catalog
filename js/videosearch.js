@@ -47,7 +47,6 @@ function processLimit() {
 	return limitWorkString;
 }
 
-
 function processSearch() {
 	// version 1 : January 22, 2003
 	//
@@ -89,7 +88,6 @@ function processSearch() {
 	}
 	return searchWorkString;
 }
-
 
 function submitSearch(searchForm) {
 	// version 1 : January 22, 2003
@@ -189,62 +187,12 @@ function modifySearch() {
 	var modifyString1 = unescape(location.search);
 	var modifyString2 = [];
 	var modifyString3 = [];
-	var modifyString2 = modifyString1.split("&");
-	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
-	} else {
-		var modifyString3 = modifyString2[0].split("?");
-	}
-	parseSearch(modifyString3[1]);
-}
 
-function modifySearch() {
-	// version 2 : May 25, 2004
-	//
-	// This function takes the URL of the current page and extracts all search data into the
-	// array modifyString3. It then passes that information to the function parseSearch.
-	var modifyString1 = unescape(location.search);
-	var modifyString2 = [];
-	var modifyString3 = [];
-	var modifyString2 = modifyString1.split("&");
+	modifyString2 = modifyString1.split("&");
 	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
+		modifyString3 = modifyString2[0].split("?NOSRCH=");
 	} else {
-		var modifyString3 = modifyString2[0].split("?");
-	}
-	parseSearch(modifyString3[1]);
-}
-
-function modifySearch() {
-	// version 2 : May 25, 2004
-	//
-	// This function takes the URL of the current page and extracts all search data into the
-	// array modifyString3. It then passes that information to the function parseSearch.
-	var modifyString1 = unescape(location.search);
-	var modifyString2 = [];
-	var modifyString3 = [];
-	var modifyString2 = modifyString1.split("&");
-	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
-	} else {
-		var modifyString3 = modifyString2[0].split("?");
-	}
-	parseSearch(modifyString3[1]);
-}
-
-function modifySearch() {
-	// version 2 : May 25, 2004
-	//
-	// This function takes the URL of the current page and extracts all search data into the
-	// array modifyString3. It then passes that information to the function parseSearch.
-	var modifyString1 = unescape(location.search);
-	var modifyString2 = [];
-	var modifyString3 = [];
-	var modifyString2 = modifyString1.split("&");
-	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
-	} else {
-		var modifyString3 = modifyString2[0].split("?");
+		modifyString3 = modifyString2[0].split("?");
 	}
 	parseSearch(modifyString3[1]);
 }
@@ -350,7 +298,7 @@ function parseSearch(str) {
 }
 
 function gotoDestination(path, port) {
-	if (port == null) port = 80;
+	if (!port) port = 80;
 	var url = "http://" + location.hostname + ":" + port + path;
 	window.open(url);
 }

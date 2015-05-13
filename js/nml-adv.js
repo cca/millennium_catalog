@@ -4,12 +4,12 @@
 //  If many of your patrons use an out of date browser (such as Netscape 4.7) with incomplete support
 //  for Javascript, you may wish to use srchhelp_X_nojavascript.html instead. Simply rename this file
 //  srchhelp_X_javascript.html and then rename that file srchhelp_X.html.
-var searchType = new Array();
-var searchName = new Array();
-var searchValue = new Array();
-var limitType = new Array();
-var limitName = new Array();
-var limitValue = new Array();
+var searchType = [];
+var searchName = [];
+var searchValue = [];
+var limitType = [];
+var limitName = [];
+var limitValue = [];
 
 function processLimit() {
 	// This function is called by the submitSearch function.
@@ -40,7 +40,6 @@ function processLimit() {
 	}
 	return limitWorkString;
 }
-
 
 function processSearch() {
 	// This function is called by the submitSearch function.
@@ -79,7 +78,6 @@ function processSearch() {
 	}
 	return searchWorkString;
 }
-
 
 function submitSearch(searchForm) {
 	// This function is called when the user clicks the submit button.
@@ -173,62 +171,18 @@ function modifySearch() {
 	// This function takes the URL of the current page and extracts all search data into the
 	// array modifyString3. It then passes that information to the function parseSearch.
 	var modifyString1 = unescape(location.search);
-	var modifyString2 = new Array();
-	var modifyString3 = new Array();
-	var modifyString2 = modifyString1.split("&");
+	var modifyString2 = [];
+	var modifyString3 = [];
+
+    modifyString2 = modifyString1.split("&");
+
 	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
+		modifyString3 = modifyString2[0].split("?NOSRCH=");
 	} else {
-		var modifyString3 = modifyString2[0].split("?");
+		modifyString3 = modifyString2[0].split("?");
 	}
 	parseSearch(modifyString3[1]);
 }
-
-function modifySearch() {
-	// This function takes the URL of the current page and extracts all search data into the
-	// array modifyString3. It then passes that information to the function parseSearch.
-	var modifyString1 = unescape(location.search);
-	var modifyString2 = new Array();
-	var modifyString3 = new Array();
-	var modifyString2 = modifyString1.split("&");
-	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
-	} else {
-		var modifyString3 = modifyString2[0].split("?");
-	}
-	parseSearch(modifyString3[1]);
-}
-
-function modifySearch() {
-	// This function takes the URL of the current page and extracts all search data into the
-	// array modifyString3. It then passes that information to the function parseSearch.
-	var modifyString1 = unescape(location.search);
-	var modifyString2 = new Array();
-	var modifyString3 = new Array();
-	var modifyString2 = modifyString1.split("&");
-	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
-	} else {
-		var modifyString3 = modifyString2[0].split("?");
-	}
-	parseSearch(modifyString3[1]);
-}
-
-function modifySearch() {
-	// This function takes the URL of the current page and extracts all search data into the
-	// array modifyString3. It then passes that information to the function parseSearch.
-	var modifyString1 = unescape(location.search);
-	var modifyString2 = new Array();
-	var modifyString3 = new Array();
-	var modifyString2 = modifyString1.split("&");
-	if (modifyString2[0].indexOf("?NOSRCH=") != -1) {
-		var modifyString3 = modifyString2[0].split("?NOSRCH=");
-	} else {
-		var modifyString3 = modifyString2[0].split("?");
-	}
-	parseSearch(modifyString3[1]);
-}
-
 
 function parseSearch(str) {
 	// This function is called by the function modifySearch.
@@ -328,7 +282,7 @@ function parseSearch(str) {
 }
 
 function gotoDestination(path, port) {
-	if (port == null) port = 80;
+	if (!port) port = 80;
 	var url = "http://" + location.hostname + ":" + port + path;
 	window.open(url);
 }
