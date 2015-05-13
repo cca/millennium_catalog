@@ -1,5 +1,4 @@
 /* TOGGLE */
-
 function toggle(id) {
 	document.getElementById(id).style.visibility = 'visible';
 	if (document.getElementById(id).style.display == 'none') {
@@ -8,7 +7,6 @@ function toggle(id) {
 		document.getElementById(id).style.display = 'none';
 	}
 }
-
 
 /*
  *   GBS - Google Book Classes
@@ -28,13 +26,12 @@ function toggle(id) {
  *
  *  This file can be used stand-alone, without any supporting libraries.
  */
-
 (function() {
 
 	gbs = {
 		isReady: false,
 		readyListeners: new Array()
-	};
+	}
 
 	/*****************************************************************/
 	/*
@@ -73,17 +70,17 @@ function toggle(id) {
 					item = listEvents[i];
 					if (item[0].removeEventListener) {
 						item[0].removeEventListener(item[1], item[2], item[3]);
-					};
+					}
 					if (item[1].substring(0, 2) != "on") {
 						item[1] = "on" + item[1];
-					};
+					}
 					if (item[0].detachEvent) {
 						item[0].detachEvent(item[1], item[2]);
-					};
+					}
 					item[0][item[1]] = null;
-				};
+				}
 			}
-		};
+		}
 	}();
 	addEvent(window, 'unload', EventCache.flush);
 	// end of rock-solid addEvent
@@ -103,7 +100,7 @@ function toggle(id) {
 		opera: /opera/.test(userAgent),
 		msie: /msie/.test(userAgent) && !/opera/.test(userAgent),
 		mozilla: /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent)
-	};
+	}
 
 	function bindReady() {
 		// Mozilla, Opera (see further below for it) and webkit nightlies currently support this event
@@ -178,7 +175,7 @@ function toggle(id) {
 
 	function trim(s) {
 		return s.replace(/^\s+|\s+$/g, '');
-	};
+	}
 
 	// find ISBN in III record display
 	function scrapeIdentifierInIIIRecordDisplay(id) {
@@ -348,7 +345,7 @@ function toggle(id) {
 
 				return this.searchitem;
 			}
-		};
+		}
 
 		// wrap the span element in a link to bookinfo[bookInfoProp]
 		function linkTo(mReq, bookInfoProp, target) {
@@ -547,10 +544,7 @@ function toggle(id) {
 /* <script src="/screens/bookjacket2.js"></script>*/
 
 var spans = document.getElementsByTagName("span"); //find all spans on search results page
-for (var i = 0; i < spans.length; i++) //loop through all spans
-{
-
-
+for (var i = 0; i < spans.length; i++) {
 	if (spans[i].className == "UPC") { // if span class is UPC plug span content into content cafe link and image
 		var upc = spans[i].innerHTML;
 		upc = upc.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
@@ -589,9 +583,8 @@ for (var i = 0; i < spans.length; i++) //loop through all spans
 
 var divs = document.getElementsByTagName("div");
 for (var k = 0; k < divs.length; k++) {
-
-	if (divs[k].className == "bibSearch") // if on the bib page
-	{
+    // if on the bib page
+	if (divs[k].className == "bibSearch") {
 		var isbn, upc;
 		var tds = document.getElementsByTagName('TD');
 		for (var j = 0; j < tds.length; j++) {
@@ -599,8 +592,7 @@ for (var k = 0; k < divs.length; k++) {
 				isbn = tds[j + 1].innerHTML;
 				isbn = isbn.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
 				isbn = isbn.replace(/\$+\d{1,4}/, "")
-					//alert ("isbn " + isbn);
-
+				//alert ("isbn " + isbn);
 			}
 
 			if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML == "Standard No.") { //check if there is any UPC in the bibliographic record
@@ -614,8 +606,7 @@ for (var k = 0; k < divs.length; k++) {
 			}
 		}
 		var spans = document.getElementsByTagName("span"); //find all spans on search results page
-		for (var i = 0; i < spans.length; i++) //loop through all spans
-		{
+		for (var i = 0; i < spans.length; i++) {
 			if (spans[i].className == "UPC" && upc != "") {
 				//alert ("upc " + upc);
 				var upcimage =
@@ -641,14 +632,10 @@ for (var k = 0; k < divs.length; k++) {
 				}
 			}
 		}
-
-
 	}
-
 }
 
-// from CITETHIS.js
-// add bib title to <title> tag
+// from CITETHIS.js,  add bib title to <title> tag
 try {
 	var tr = document.getElementsByTagName('TR');
 	var bib_title = "";
@@ -676,7 +663,6 @@ try {
 	alert(e);
 }
 
-
 // begin "Cite This" script from IUG list
 try {
 	var tr = document.getElementsByTagName('TR');
@@ -690,10 +676,9 @@ try {
 		}
 	}
 	var check = document.getElementById("citeoclc");
+    // @todo um empty if block wth? can probably remove this
 	if (check == null) {} else if (otherlib_title.length > 0) {
-		document.getElementById("citeoclc").innerHTML =
-			"<a href='http://worldcat.org/wcpa/oclc/" + otherlib_title +
-			"?page=citation' class='lightbox'>  Cite this item</a>";
+		document.getElementById("citeoclc").innerHTML = "<a href='http://worldcat.org/wcpa/oclc/" + otherlib_title + "?page=citation' class='lightbox'>  Cite this item</a>";
 	} else {
 		document.getElementById("citeoclc").style.display = "none";
 	}
@@ -702,31 +687,15 @@ try {
 // add link to featured lists page (ftlist)
 var trs = document.getElementsByTagName('TR');
 for (var j = 0; j < trs.length; j++) {
-	if (trs[j].className == 'ftlistHeader') { // check if there is any ISBN in the bibliographic record
-
+    // check if there is any ISBN in the bibliographic record
+	if (trs[j].className == 'ftlistHeader') {
 		var ths = document.getElementsByTagName("TH");
 		for (var i = 0; i < ths.length; i++) {
 			if (ths[i].innerHTML == "Featured at CCA Libraries (3 entries)") {
-				var ftlist =
-					"Featured at CCA Libraries<br /><a href='http://library.cca.edu/search/new-titles-email-signup' style='font-size: 12px;'>+ Sign-up for new titles monthly emails +</a>";
+				var ftlist = "Featured at CCA Libraries<br /><a href='http://library.cca.edu/search/new-titles-email-signup' style='font-size: 12px;'>+ Sign-up for new titles monthly emails +</a>";
 
 				ths[i].innerHTML = ftlist;
 			}
-
 		}
 	}
 }
-
-/* add emphasis to local note fields in bibdisplay
-var tds = document.getElementsByTagName('TD');
-			for(var k = 0; k < tds.length; k++) {
-				if (tds[k].className=='bibInfoLabel' && tds[k].innerHTML=="Local Note") {
-					//alert ("bibinfolabel");
-
-							var emphasis = "<em>" + tds[k+1].innerHTML + "</em>";
-							tds[k+1].innerHTML = emphasis;
-
-
-				}
-			}
-*/

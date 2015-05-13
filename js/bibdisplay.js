@@ -1,4 +1,4 @@
-/* 
+/*
  *  Rel 2009B Example Set
  *  This File Last Changed: 12 Dec 2009
  */
@@ -19,14 +19,12 @@ function init() {
 	highlightRows();
 	stripeSubjectTables();
 	stripeBrowseTables();
-
-};
+}
 
 /* for Mozilla/Opera9 */
 if (document.addEventListener) {
 	document.addEventListener("DOMContentLoaded", init, false);
 }
-
 
 /* for Safari */
 if (/WebKit/i.test(navigator.userAgent)) { // sniff
@@ -39,7 +37,6 @@ if (/WebKit/i.test(navigator.userAgent)) { // sniff
 
 /* for other browsers */
 window.onload = init;
-
 
 function addLoadEvent(func) {
 	var oldonload = window.onload;
@@ -264,7 +261,6 @@ function stripeBrowseTables() {
 						}
 					}
 				}
-
 			}
 		}
 	}
@@ -287,7 +283,6 @@ function stripeBrowse() {
 }
 
 // Robert Nyman
-
 function getElemByClass(oElm, strTagName, strClassName) {
 	var arrElements = (strTagName == "*" && oElm.all) ? oElm.all : oElm.getElementsByTagName(
 		strTagName);

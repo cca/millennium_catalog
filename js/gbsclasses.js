@@ -20,7 +20,7 @@
 	gbs = {
 		isReady: false,
 		readyListeners: new Array()
-	};
+	}
 
 	/*****************************************************************/
 	/*
@@ -59,17 +59,17 @@
 					item = listEvents[i];
 					if (item[0].removeEventListener) {
 						item[0].removeEventListener(item[1], item[2], item[3]);
-					};
+					}
 					if (item[1].substring(0, 2) != "on") {
 						item[1] = "on" + item[1];
-					};
+					}
 					if (item[0].detachEvent) {
 						item[0].detachEvent(item[1], item[2]);
-					};
+					}
 					item[0][item[1]] = null;
-				};
+				}
 			}
-		};
+		}
 	}();
 	addEvent(window, 'unload', EventCache.flush);
 	// end of rock-solid addEvent
@@ -89,7 +89,7 @@
 		opera: /opera/.test(userAgent),
 		msie: /msie/.test(userAgent) && !/opera/.test(userAgent),
 		mozilla: /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent)
-	};
+	}
 
 	function bindReady() {
 		// Mozilla, Opera (see further below for it) and webkit nightlies currently support this event
@@ -163,7 +163,7 @@
 
 	function trim(s) {
 		return s.replace(/^\s+|\s+$/g, '');
-	};
+	}
 
 	// find ISBN in III record display
 	function scrapeIdentifierInIIIRecordDisplay(id) {
@@ -333,7 +333,7 @@
 
 				return this.searchitem;
 			}
-		};
+		}
 
 		// wrap the span element in a link to bookinfo[bookInfoProp]
 		function linkTo(mReq, bookInfoProp, target) {
