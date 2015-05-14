@@ -76,5 +76,5 @@ module.exports = function(grunt) {
 	// shortcuts, multi-tasks
 	grunt.registerTask('test', ['jshint']); // @todo scss-lint
 	grunt.registerTask('build', ['sass', 'uglify']);
-	grunt.registerTask('default', ['sass']);
+	grunt.registerTask('default', ['sass', 'uglify']);
 };
