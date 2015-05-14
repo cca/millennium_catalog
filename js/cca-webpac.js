@@ -548,37 +548,37 @@ for (var i = 0; i < spans.length; i++) {
 	if (spans[i].className == "UPC") { // if span class is UPC plug span content into content cafe link and image
 		var upc = spans[i].innerHTML;
 		upc = upc.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
-		if (upc != "") {
+		if (upc !== "") {
 			upc = "0" + upc;
 			upc = upc.substring(0, 13);
 			var upcimage =
-				"<span class='bookjacket'><a href='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=" +
+				'<span class="bookjacket"><a href="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=' +
 				upc +
-				" target='_parent'><img src='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=" +
-				upc + "&erroroverride=1&' border='0' alt='book jacket'></a></span>";
+				'" target="_parent"><img src="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=' +
+				upc + '&erroroverride=1" border="0" alt="book jacket"></a></span>';
 			spans[i].innerHTML = upcimage;
 		}
-
 	} else if (spans[i].className == "ISBN") { // if span class is ISBN plug span content into content cafe link and image
 		var isbn = spans[i].innerHTML;
 		isbn = isbn.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
-		isbn = isbn.replace(/\$+\d{1,4}/, "")
-		if (upc != "") { // don't use ISBN if UPC worked
+            .replace(/\$+\d{1,4}/, "")
+            // fix edge case like "9780199237968[1]", ref #37
+            // for "Nature's patterns: a tapestry in three parts"
+            .replace(/\[.*\]/, "")
+		if (upc !== "") { // don't use ISBN if UPC worked
 			spans[i].innerHTML = "";
 			continue;
-		} else if (isbn != "") {
+		} else if (isbn !== "") {
 			var isbnimage =
-				"<span class='bookjacket'><a href='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=" +
+				'<span class="bookjacket"><a href="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=' +
 				isbn +
-				" target='_parent'><img src='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=" +
-				isbn + "&erroroverride=1&' border='0' alt='book jacket'></a></span>";
+				'" target="_parent"><img src="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=' +
+				isbn + '&erroroverride=1" border="0" alt="book jacket"></a></span>';
 			spans[i].innerHTML = isbnimage;
-		} else if (isbn == "") {
+		} else if (isbn === "") {
 			spans[i].innerHTML = "";
 		}
 	}
-
-
 }
 
 var divs = document.getElementsByTagName("div");
@@ -588,46 +588,47 @@ for (var k = 0; k < divs.length; k++) {
 		var isbn, upc;
 		var tds = document.getElementsByTagName('TD');
 		for (var j = 0; j < tds.length; j++) {
-			if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML == "ISBN") { // check if there is any ISBN in the bibliographic record
+            // check if there is any ISBN in the bibliographic record
+			if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML == "ISBN") {
 				isbn = tds[j + 1].innerHTML;
 				isbn = isbn.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
-				isbn = isbn.replace(/\$+\d{1,4}/, "")
-				//alert ("isbn " + isbn);
+                    .replace(/\$+\d{1,4}/, "")
+                    // fix edge case like "9780199237968[1]", ref #37
+                    // for "Nature's patterns: a tapestry in three parts"
+                    .replace(/\[.*\]/, "")
 			}
 
-			if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML == "Standard No.") { //check if there is any UPC in the bibliographic record
+            //check if there is any UPC in the bibliographic record
+			if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML == "Standard No.") {
 				upc = tds[j + 1].innerHTML;
 				upc = upc.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
 				if (upc != "") {
 					upc = "0" + upc;
 					upc = upc.substring(0, 13);
 				}
-				//alert ("upc " + upc);
 			}
 		}
 		var spans = document.getElementsByTagName("span"); //find all spans on search results page
 		for (var i = 0; i < spans.length; i++) {
-			if (spans[i].className == "UPC" && upc != "") {
-				//alert ("upc " + upc);
+			if (spans[i].className == "UPC" && upc !== "") {
 				var upcimage =
-					"<a href='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=" +
+					'<a href="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=' +
 					upc +
-					" target='_parent'><img src='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=" +
-					upc + "&erroroverride=1&' border='0' alt='book jacket'></a>";
+					'" target="_parent"><img src="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=' +
+					upc + '&erroroverride=1" border="0" alt="book jacket"></a>';
 				spans[i].innerHTML = upcimage;
 			} else if (spans[i].className == "ISBN") {
-				//alert ("isbn " + isbn);
-				if (upc != "") { // don't use ISBN if UPC worked
+				if (upc !== "") { // don't use ISBN if UPC worked
 					spans[i].innerHTML = "";
 					continue;
 				} else if (isbn != "") {
 					var isbnimage =
-						"<a href='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=" +
+						'<a href="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=' +
 						isbn +
-						" target='_parent'><img src='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=" +
-						isbn + "&erroroverride=1&' border='0' alt='book jacket'></a>";
+						'" target="_parent"><img src="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=' +
+						isbn + '&erroroverride=1" border="0" alt="book jacket"></a>';
 					spans[i].innerHTML = isbnimage;
-				} else if (isbn == "") {
+				} else if (isbn === "") {
 					spans[i].innerHTML = "";
 				}
 			}
