@@ -30,7 +30,7 @@ function toggle(id) {
 
 	gbs = {
 		isReady: false,
-		readyListeners: new Array()
+		readyListeners: []
 	}
 
 	/*****************************************************************/
@@ -195,7 +195,7 @@ function toggle(id) {
 			if (bdata == null)
 				break;
 
-			var text = trim(bdata.innerText || bdata.textContent || "");
+			text = trim(bdata.innerText || bdata.textContent || "");
 			if (id == "ISBN") {
 				var m = text.match(/^((\d|x){10,13}).*/i);
 				if (m) {
@@ -226,12 +226,12 @@ function toggle(id) {
 			delete gbsKey2Req[result.bib_key];
 		}
 
-		for (var i in gbsKey2Req) {
+		for (i in gbsKey2Req) {
 			req = gbsKey2Req[i];
 			if (req == null)
 				continue;
 
-			for (var j = 0; j < req.length; j++) {
+			for (j = 0; j < req.length; j++) {
 				req[j].onfailure();
 			}
 			delete gbsKey2Req[i];
@@ -240,7 +240,7 @@ function toggle(id) {
 
 	// process all spans in a document
 	function gbsProcessSpans(spanElems) {
-		gbsKey2Req = new Object();
+		gbsKey2Req = {};
 		while (spanElems.length > 0) {
 			var spanElem = spanElems.pop();
 			if (spanElem.expanded)
@@ -249,11 +249,11 @@ function toggle(id) {
 			gbsProcessSpan(spanElem);
 		}
 
-		var bibkeys = new Array();
+		var bibkeys = [];
 		for (var k in gbsKey2Req)
 			bibkeys.push(k);
 
-		if (bibkeys.length == 0)
+		if (bibkeys.length === 0)
 			return;
 
 		bibkeys = bibkeys.join(",");
@@ -277,8 +277,8 @@ function toggle(id) {
 			removeTitle: function() {
 				this.span.setAttribute('title', '');
 			},
-			success: new Array(),
-			failure: new Array(),
+			success: [],
+			failure: [],
 			onsuccess: function(result) {
 				for (var i = 0; i < this.success.length; i++)
 					try {
@@ -381,7 +381,7 @@ function toggle(id) {
 		}
 
 		/**
-		 * See: http://code.google.com/apis/books/getting-started.html
+		 * See: https://developers.google.com/books/docs/overview?csw=1
 		    bib_key
 		        The identifier used to query this book.
 		    info_url
@@ -498,12 +498,12 @@ function toggle(id) {
 
 	function gbsReady() {
 		var span = document.getElementsByTagName("span");
-		var spanElems = new Array();
+		var spanElems = [];
 		for (var i = 0; i < span.length; i++) {
 			spanElems.push(span[span.length - 1 - i]);
 		}
 		var divs = document.getElementsByTagName("div");
-		for (var i = 0; i < divs.length; i++) {
+		for (i = 0; i < divs.length; i++) {
 			spanElems.push(divs[divs.length - 1 - i]);
 		}
 		gbsProcessSpans(spanElems);
@@ -693,7 +693,7 @@ for (var j = 0; j < trs.length; j++) {
 		var ths = document.getElementsByTagName("TH");
 		for (var i = 0; i < ths.length; i++) {
 			if (ths[i].innerHTML == "Featured at CCA Libraries (3 entries)") {
-				var ftlist = "Featured at CCA Libraries<br /><a href='http://library.cca.edu/search/new-titles-email-signup' style='font-size: 12px;'>+ Sign-up for new titles monthly emails +</a>";
+				var ftlist = "Featured at CCA Libraries<br><br><a href='http://libraries.cca.edu/new-titles-email-signup'>+ Sign-up for new titles monthly emails +</a>";
 
 				ths[i].innerHTML = ftlist;
 			}
