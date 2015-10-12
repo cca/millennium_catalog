@@ -1,3 +1,5 @@
+// advanced search script for Theses search form
+
 var searchType = [];
 var searchName = [];
 var searchValue = [];

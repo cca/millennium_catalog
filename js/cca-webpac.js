@@ -1,3 +1,9 @@
+// @TODO modularlize this code by breaking into discrete pieces, then
+// concatenating via a Grunt task. There are at least 3 things going on here:
+// - Google Books Classes (NOTE: what does this even do?!?)
+// - Book jacket images around line 530
+// - OCLC "cite this" link around line 647
+
 /* TOGGLE */
 function toggle(id) {
 	document.getElementById(id).style.visibility = 'visible';
@@ -520,6 +526,8 @@ function toggle(id) {
 	}
 
 })();
+
+// @TODO split into own file, is book jacket images script
 
 // Adapted from Sam Ho @ HKAPA Library bookjacket.js code
 // BIB_IMAGE is not required, so disable it first

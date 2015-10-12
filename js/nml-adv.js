@@ -1,3 +1,5 @@
+// Materials Library version of the advanced search script
+
 //  NOTE: The following Javascript functions are provided for example purposes only.
 //  Unless you have experience working with Javascript, please refer to your local technical
 //  resources for assistance with modification.

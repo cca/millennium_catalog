@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // @TODO combine with Mat Lib below?
     $('a.lightbox').fancybox({
         'transitionIn': 'elastic',
         'transitionOut': 'elastic',
@@ -15,9 +16,10 @@ $(document).ready(function() {
     });
 
     // all other scopes
+    // @TODO instead of a ridiculous selector, add a "lightbox" class to element
     $('a:has(img[alt="book jacket"])').fancybox({
-        'type' : 'image',
-        'transitionIn' : 'elastic',
+        'type': 'image',
+        'transitionIn': 'elastic',
         'transitionOut': 'elastic'
     });
 

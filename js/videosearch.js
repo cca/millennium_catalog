@@ -1,3 +1,5 @@
+// advanced search script for videos search form
+
 //  IMPORTANT NOTE: The following Javascript functions are provided for example purposes only.
 //  Unless you have experience working with Javascript, please refer to your local technical
 //  resources for assistance with modification.

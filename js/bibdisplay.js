@@ -1,3 +1,5 @@
+// NOTE: what does this do? do we use it anywhere?
+
 /*
  *  Rel 2009B Example Set
  *  This File Last Changed: 12 Dec 2009
