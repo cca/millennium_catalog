@@ -67,6 +67,12 @@ module.exports = function(grunt) {
 					'js/*.js', '!js/jquery.*.js'
 				],
 				tasks: ['jshint']
+			},
+			js: {
+				files: [
+					'js/*.js', '!js/jquery.*.js'
+				],
+				tasks: ['uglify']
 			}
 		}
 	});
