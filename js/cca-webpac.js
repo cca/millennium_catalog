@@ -650,7 +650,7 @@ if (bib_title.length > 65) {
 } else if (bib_title.length <= 65 && bib_title.length > 0) {
 	document.title = document.title + " :: " + bib_title;
 } else if (searchterms !== undefined) {
-	document.title = document.title + " :: '" + searchterms.value +
+	document.title = document.title + " :: '" + searchterms +
 		"' search results"
 }
 
