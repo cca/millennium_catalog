@@ -16,37 +16,22 @@
 // </span>
 // <!--{bibimage}-->
 // <br/>
+
 var spans = document.getElementsByTagName("span"); //find all spans on search results page
 
 for (var i = 0; i < spans.length; i++) { //loop through all spans
-    if (spans[i].className == "UPC") { // if span class is UPC plug span content into content cafe link and image
-        var upc = spans[i].innerHTML;
-        upc = upc.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
-        if (upc != "") {
-            upc = "0" + upc;
-            upc = upc.substring(0, 13);
-            var upcimage =
-                "<span class='bookjacket'><a href='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=" +
-                upc +
-                " target='_parent'><img src='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=" +
-                upc + "&erroroverride=1&' border='0' alt='sample'></a></span>";
-            spans[i].innerHTML = upcimage;
-        }
-
-    } else if (spans[i].className == "ISBN") { // if span class is ISBN plug span content into content cafe link and image
+    // if span class is ISBN plug span content into content cafe link and image
+    if (spans[i].className == "ISBN") {
         var isbn = spans[i].innerHTML;
         isbn = isbn.replace(/[\-\,\(\)\s]/g, "").replace(/\$+\d{1,4}/, "")
-        if (upc != "") { // don't use ISBN if UPC worked
-            spans[i].innerHTML = "";
-            continue;
-        } else if (isbn != "") {
+        if (isbn !== "") {
             var isbnimage =
                 "<span class='bookjacket'><a href='http://libraries.cca.edu/nml-images/" +
                 isbn +
                 ".jpg' target='_parent'><img src='http://libraries.cca.edu/nml-images/" +
-                isbn + "' border='0' alt='sample'></a></span>";
+                isbn + "' alt='sample'></a></span>";
             spans[i].innerHTML = isbnimage;
-        } else if (isbn == "") {
+        } else if (isbn === "") {
             spans[i].innerHTML = "";
         }
     }
@@ -56,7 +41,7 @@ var divs = document.getElementsByTagName("div");
 
 for (var k = 0; k < divs.length; k++) {
     if (divs[k].className == "bibSearch") { // if on the bib page
-        var isbn, upc;
+        var isbn;
         var tds = document.getElementsByTagName('TD');
 
         for (var j = 0; j < tds.length; j++) {
@@ -67,43 +52,19 @@ for (var k = 0; k < divs.length; k++) {
                 isbn = isbn.replace(/\$+\d{1,4}/, "")
                     //alert ("isbn " + isbn);
             }
-
-            //check if there is any UPC in the bibliographic record
-            if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML ==
-                "Standard No.") {
-                upc = tds[j + 1].innerHTML;
-                upc = upc.replace(/[a-zA-Z\-\,\.\(\)\s]/g, "")
-                if (upc != "") {
-                    upc = "0" + upc;
-                    upc = upc.substring(0, 13);
-                }
-                //alert ("upc " + upc);
-            }
         }
 
         var spans = document.getElementsByTagName("span"); //find all spans on search results page
         for (var i = 0; i < spans.length; i++) { //loop through all spans
-            if (spans[i].className == "UPC" && upc != "") {
-                //alert ("upc " + upc);
-                var upcimage =
-                    "<a href='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=" +
-                    upc +
-                    " target='_parent'><img src='http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=S&Value=" +
-                    upc + "&erroroverride=1&' border='0' alt='sample'></a>";
-                spans[i].innerHTML = upcimage;
-            } else if (spans[i].className == "ISBN") {
-                //alert ("isbn " + isbn);
-                if (upc != "") { // don't use ISBN if UPC worked
-                    spans[i].innerHTML = "";
-                    continue;
-                } else if (isbn != "") {
+            if (spans[i].className == "ISBN") {
+                if (isbn !== "") {
                     var isbnimage =
                         "<span class='bookjacket'><a href='http://libraries.cca.edu/nml-images/" +
                         isbn +
                         "' target='_parent'><img src='http://libraries.cca.edu/nml-images/" +
-                        isbn + "' border='0' alt='sample'></a></span>";
+                        isbn + "' alt='sample'></a></span>";
                     spans[i].innerHTML = isbnimage;
-                } else if (isbn == "") {
+                } else if (isbn === "") {
                     spans[i].innerHTML = "";
                 }
             }
