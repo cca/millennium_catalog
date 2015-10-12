@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     // Materials Library
-    $('a:has(img[alt="sample"])').fancybox({
+    $('a.lightbox').fancybox({
         'type': 'image',
         'transitionIn': 'elastic',
         'transitionOut': 'elastic'
