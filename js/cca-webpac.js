@@ -184,16 +184,15 @@ function toggle(id) {
 			if (tds[i].className != "bibInfoLabel")
 				continue;
 			var text = trim(tds[i].innerText || tds[i].textContent || "");
-			if (!new RegExp(id).test(text))
-				continue;
+			if (!new RegExp(id).test(text)) continue;
 
 			var bdata = tds[i].nextSibling;
-			while (bdata != null && bdata.tagName != "TD" && bdata.className !=
-				"bibInfoData")
-				bdata = bdata.nextSibling;
+			while (bdata !== null && bdata.tagName != "TD" &&
+				bdata.className != "bibInfoData") {
+					bdata = bdata.nextSibling;
+			}
 
-			if (bdata == null)
-				break;
+			if (bdata === null) break;
 
 			text = trim(bdata.innerText || bdata.textContent || "");
 			if (id == "ISBN") {
@@ -269,7 +268,7 @@ function toggle(id) {
 	// process a single span
 	function gbsProcessSpan(spanElem) {
 		var cName = spanElem.className;
-		if (cName == null)
+		if (cName === "")
 			return;
 
 		var mReq = {
@@ -337,7 +336,7 @@ function toggle(id) {
 					// remove first child only
 					if (this.span.hasChildNodes())
 						this.span.removeChild(this.span.firstChild);
-				} else if ((m = req.match(/(.*):millennium.record/)) != null) {
+				} else if ((m = req.match(/(.*):millennium.record/)) !== null) {
 					this.searchitem = scrapeIdentifierInIIIRecordDisplay(m[1]);
 				} else {
 					this.searchitem = req.toLowerCase();
@@ -358,7 +357,7 @@ function toggle(id) {
 				p.removeChild(mReq.span);
 				var a = document.createElement("a");
 				a.setAttribute("href", bookinfo[bookInfoProp]);
-				if (target != undefined)
+				if (target !== undefined)
 					a.setAttribute("target", "_" + target);
 				a.appendChild(mReq.span);
 				p.insertBefore(a, s);
@@ -367,14 +366,14 @@ function toggle(id) {
 
 		function makeSureSpanIsVisible(mReq) {
 			var node = mReq.span;
-			if (node.style != null && node.style.display == "none") {
+			if (node.style && node.style.display == "none") {
 				node.style.display = "inline";
 			}
 
 			// and, if one or more hidden parents exist, unhide them parent as well.
 			// XXX should we do this conditionally based on a gbs-unhide-parent class?
-			for (; node != null; node = node.parentNode) {
-				if (node.style != null && node.style.display == "none") {
+			for (; node; node = node.parentNode) {
+				if (node.style && node.style.display == "none") {
 					node.style.display = "block";
 				}
 			}
@@ -436,12 +435,13 @@ function toggle(id) {
 				case "gbs-if-full":
 					mReq.gbsif = gbsClass.replace(/gbs-if-/, "");
 					mReq.useConditionalVisible = true;
+					var keep;
 					mReq.success.push(function(mReq, bookinfo) {
 						if (mReq.gbsif == "partial-or-full") {
-							var keep = bookinfo.preview == "partial" || bookinfo.preview ==
+							keep = bookinfo.preview == "partial" || bookinfo.preview ==
 								"full";
 						} else {
-							var keep = bookinfo.preview == mReq.gbsif;
+							keep = bookinfo.preview == mReq.gbsif;
 						}
 						// remove if availability doesn't match the requested
 						if (!keep) {
@@ -602,7 +602,7 @@ for (var k = 0; k < divs.length; k++) {
 			if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML == "Standard No.") {
 				upc = tds[j + 1].innerHTML;
 				upc = upc.replace(/[a-zA-Z\-\,\:\.\(\)\s]/g, "")
-				if (upc != "") {
+				if (upc !== "") {
 					upc = "0" + upc;
 					upc = upc.substring(0, 13);
 				}
@@ -621,7 +621,7 @@ for (var k = 0; k < divs.length; k++) {
 				if (upc !== "") { // don't use ISBN if UPC worked
 					spans[i].innerHTML = "";
 					continue;
-				} else if (isbn != "") {
+				} else if (isbn) {
 					var isbnimage =
 						'<a href="http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=CCA49068&Password=CC63500&Return=1&Type=L&Value=' +
 						isbn +
@@ -637,66 +637,41 @@ for (var k = 0; k < divs.length; k++) {
 }
 
 // from CITETHIS.js,  add bib title to <title> tag
-try {
-	var tr = document.getElementsByTagName('TR');
-	var bib_title = "";
-	for (i = 0; i < tr.length; i++) {
-		var x = tr[i].getElementsByTagName('TD');
-		if (x.length == 2 && x[0].innerHTML == "Title") {
-			bib_title = x[1].innerHTML.replace(/(<([^>]+)>)|\n/gi, "");
-			bib_title = bib_title.replace(/^\s*(.+)\s*$/g, "$1");
-			bib_title = bib_title.replace(/^(.+)(\s\/\s).+$/i, "$1");
-			bib_title = bib_title.replace(/ :/g, ":");
-			bib_title = bib_title.replace(/\//g, "by");
-			bib_title = bib_title.replace(/&amp;/g, " and ");
-		}
-	}
-	var searchterms = document.getElementsByName('searcharg')[0];
-	if (bib_title.length > 65) {
-		document.title = document.title + " :: " + bib_title.substr(0, 65) + "...";
-	} else if (bib_title.length <= 65 && bib_title.length > 0) {
-		document.title = document.title + " :: " + bib_title;
-	} else if (searchterms != undefined) {
-		document.title = document.title + " :: '" + searchterms.value +
-			"' search results"
-	}
-} catch (e) {
-	alert(e);
+var bib_title = $('.bibDisplayTitle td:contains("Title")').next('td').text()
+bib_title = bib_title.replace(/(<([^>]+)>)|\n/gi, "")
+			.replace(/^\s*(.+)\s*$/g, "$1")
+			.replace(/^(.+)(\s\/\s).+$/i, "$1")
+			.replace(/ :/g, ":")
+			.replace(/\//g, "by")
+			.replace(/&amp;/g, " and ");
+var searchterms = $('#searcharg').val();
+if (bib_title.length > 65) {
+	document.title = document.title + " :: " + bib_title.substr(0, 65) + "...";
+} else if (bib_title.length <= 65 && bib_title.length > 0) {
+	document.title = document.title + " :: " + bib_title;
+} else if (searchterms !== undefined) {
+	document.title = document.title + " :: '" + searchterms.value +
+		"' search results"
 }
 
 // begin "Cite This" script from IUG list
-try {
-	var tr = document.getElementsByTagName('TR');
-	var otherlib_title = "";
-	for (k = 0; k < tr.length; k++) {
-		var x = tr[k].getElementsByTagName('TD');
-		if (x.length == 2 && x[0].innerHTML == "OCLC #") {
-			otherlib_title = x[1].innerHTML.replace(/(<([^>]+)>)/ig, "");
-			otherlib_title = otherlib_title.replace(/ /g, "");
-			otherlib_title = otherlib_title.replace(/[\n\t]/ig, "");
-		}
-	}
-	var check = document.getElementById("citeoclc");
-    // @todo um empty if block wth? can probably remove this
-	if (check == null) {} else if (otherlib_title.length > 0) {
-		document.getElementById("citeoclc").innerHTML = "<a href='http://worldcat.org/wcpa/oclc/" + otherlib_title + "?page=citation' class='lightbox'>  Cite this item</a>";
-	} else {
-		document.getElementById("citeoclc").style.display = "none";
-	}
-} catch (e) {}
-
-// add link to featured lists page (ftlist)
-var trs = document.getElementsByTagName('TR');
-for (var j = 0; j < trs.length; j++) {
-    // check if there is any ISBN in the bibliographic record
-	if (trs[j].className == 'ftlistHeader') {
-		var ths = document.getElementsByTagName("TH");
-		for (var i = 0; i < ths.length; i++) {
-			if (ths[i].innerHTML == "Featured at CCA Libraries (3 entries)") {
-				var ftlist = "Featured at CCA Libraries<br><br><a href='http://libraries.cca.edu/new-titles-email-signup'>+ Sign-up for new titles monthly emails +</a>";
-
-				ths[i].innerHTML = ftlist;
-			}
-		}
+var tr = document.getElementsByTagName('TR');
+var otherlib_title = "";
+for (k = 0; k < tr.length; k++) {
+	var x = tr[k].getElementsByTagName('TD');
+	if (x.length == 2 && x[0].innerHTML == "OCLC #") {
+		otherlib_title = x[1].innerHTML.replace(/(<([^>]+)>)/ig, "");
+		otherlib_title = otherlib_title.replace(/ /g, "");
+		otherlib_title = otherlib_title.replace(/[\n\t]/ig, "");
 	}
 }
+var $oclc = $('#citeoclc');
+if (otherlib_title.length > 0) {
+	$oclc.html("<a href='http://worldcat.org/wcpa/oclc/" + otherlib_title + "?page=citation' class='lightbox'>  Cite this item</a>");
+} else {
+	$oclc.css('display', 'none');
+}
+
+// add link to featured lists page (ftlist)
+var emailUrl = 'http://cca.us10.list-manage1.com/subscribe?u=6f1f8c8748ad9c25fd5108322&id=cffc21178f'
+$('tr.ftlistHeader th').append('<br><br><a href="' + emailUrl + '">+ Sign-up for new titles monthly emails +</a>')
