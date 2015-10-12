@@ -1,3 +1,5 @@
+// NOTE: from previous file, uncertain of its veracity...
+//
 // Adapted from Sam Ho @ HKAPA Library bookjacket.js code
 // BIB_IMAGE is not required, so disable it first
 //
@@ -10,64 +12,31 @@
 //<!--{fieldspec:Vbi020}-->
 //</span>
 //</td>
-//
-// add the following lines as the book jacket placeholder in bib_display.html
-// <span title="bookjacket">
-// </span>
-// <!--{bibimage}-->
-// <br/>
+// ...END old notes
 
-var spans = document.getElementsByTagName("span"); //find all spans on search results page
+// jQuery IIFE
+(function($) {
 
-for (var i = 0; i < spans.length; i++) { //loop through all spans
-    // if span class is ISBN plug span content into content cafe link and image
-    if (spans[i].className == "ISBN") {
-        var isbn = spans[i].innerHTML;
-        isbn = isbn.replace(/[\-\,\(\)\s]/g, "").replace(/\$+\d{1,4}/, "")
-        if (isbn !== "") {
-            var isbnimage =
-                "<span class='bookjacket'><a href='http://libraries.cca.edu/nml-images/" +
-                isbn +
-                ".jpg' target='_parent'><img src='http://libraries.cca.edu/nml-images/" +
-                isbn + "' alt='sample'></a></span>";
-            spans[i].innerHTML = isbnimage;
-        } else if (isbn === "") {
-            spans[i].innerHTML = "";
-        }
-    }
-}
+// for the search results screen
+$('span.ISBN').each(function(){
+    var $el = $(this)
+    // find material ID
+    var mid = $el.text().replace(/[\-\,\(\)\s]/g, '').replace(/\$+\d{1,4}/, '')
+    // set image HTML or leave blank if no ID
+    var html = mid ? "<span class='bookjacket'><a href='http://libraries.cca.edu/nml-images/" +
+        mid + ".jpg' target='_parent'><img src='http://libraries.cca.edu/nml-images/" +
+        mid + "' alt='material sample'></a></span>" : ''
+    $el.html(html)
+})
 
-var divs = document.getElementsByTagName("div");
+// for individual item pages
+// find "ISBN" (material ID), is cell adjacent to label ""<td>Image</td>"
+var mid = $('td.bibInfoLabel::contains("Image")').next('td').text()
+        .replace(/[\-\,\:\(\)\s]/g, "").replace(/\$+\d{1,4}/, "")
+// set image HTML or leave blank if no ID
+var html = mid ? "<span class='bookjacket'><a href='http://libraries.cca.edu/nml-images/" +
+    mid + "' target='_parent'><img src='http://libraries.cca.edu/nml-images/" +
+    mid + "' alt='material sample'></a></span>" : ''
+$('span.ISBN').html(html)
 
-for (var k = 0; k < divs.length; k++) {
-    if (divs[k].className == "bibSearch") { // if on the bib page
-        var isbn;
-        var tds = document.getElementsByTagName('TD');
-
-        for (var j = 0; j < tds.length; j++) {
-            if (tds[j].className == 'bibInfoLabel' && tds[j].innerHTML ==
-                "Image") { // check if there is any ISBN in the bibliographic record
-                isbn = tds[j + 1].innerHTML;
-                isbn = isbn.replace(/[\-\,\:\(\)\s]/g, "")
-                isbn = isbn.replace(/\$+\d{1,4}/, "")
-                    //alert ("isbn " + isbn);
-            }
-        }
-
-        var spans = document.getElementsByTagName("span"); //find all spans on search results page
-        for (var i = 0; i < spans.length; i++) { //loop through all spans
-            if (spans[i].className == "ISBN") {
-                if (isbn !== "") {
-                    var isbnimage =
-                        "<span class='bookjacket'><a href='http://libraries.cca.edu/nml-images/" +
-                        isbn +
-                        "' target='_parent'><img src='http://libraries.cca.edu/nml-images/" +
-                        isbn + "' alt='sample'></a></span>";
-                    spans[i].innerHTML = isbnimage;
-                } else if (isbn === "") {
-                    spans[i].innerHTML = "";
-                }
-            }
-        }
-    }
-}
+})(jQuery)
