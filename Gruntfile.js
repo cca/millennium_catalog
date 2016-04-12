@@ -50,6 +50,8 @@ module.exports = function(grunt) {
 					],
 					'dist/catalog.min.js': [
 						'js/cca-webpac.js'
+						, 'js/title.js'
+						, 'js/citethis.js'
 						, 'js/book-jacket.js'
 						, 'js/fancybox-init.js'
 						, 'js/note.js'
