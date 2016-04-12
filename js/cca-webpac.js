@@ -1,8 +1,6 @@
 // @TODO modularlize this code by breaking into discrete pieces, then
 // concatenating via a Grunt task. There are at least 3 things going on here:
 // - Google Books Classes (NOTE: what does this even do?!?)
-// - Book jacket images around line 530
-// - OCLC "cite this" link around line 647
 
 /* TOGGLE */
 function toggle(id) {
@@ -582,42 +580,6 @@ for (var k = 0; k < divs.length; k++) {
 			}
 		}
 	}
-}
-
-// from CITETHIS.js,  add bib title to <title> tag
-var bib_title = $('.bibDisplayTitle td:contains("Title")').next('td').text()
-bib_title = bib_title.replace(/(<([^>]+)>)|\n/gi, "")
-			.replace(/^\s*(.+)\s*$/g, "$1")
-			.replace(/^(.+)(\s\/\s).+$/i, "$1")
-			.replace(/ :/g, ":")
-			.replace(/\//g, "by")
-			.replace(/&amp;/g, " and ");
-var searchterms = $('#searcharg').val();
-if (bib_title.length > 65) {
-	document.title = document.title + " :: " + bib_title.substr(0, 65) + "...";
-} else if (bib_title.length <= 65 && bib_title.length > 0) {
-	document.title = document.title + " :: " + bib_title;
-} else if (searchterms !== undefined) {
-	document.title = document.title + " :: '" + searchterms +
-		"' search results"
-}
-
-// begin "Cite This" script from IUG list
-var tr = document.getElementsByTagName('TR');
-var otherlib_title = "";
-for (k = 0; k < tr.length; k++) {
-	var x = tr[k].getElementsByTagName('TD');
-	if (x.length == 2 && x[0].innerHTML == "OCLC #") {
-		otherlib_title = x[1].innerHTML.replace(/(<([^>]+)>)/ig, "");
-		otherlib_title = otherlib_title.replace(/ /g, "");
-		otherlib_title = otherlib_title.replace(/[\n\t]/ig, "");
-	}
-}
-var $oclc = $('#citeoclc');
-if (otherlib_title.length > 0) {
-	$oclc.html("<a href='http://worldcat.org/wcpa/oclc/" + otherlib_title + "?page=citation' class='lightbox'>  Cite this item</a>");
-} else {
-	$oclc.css('display', 'none');
 }
 
 // add link to featured lists page (ftlist)
